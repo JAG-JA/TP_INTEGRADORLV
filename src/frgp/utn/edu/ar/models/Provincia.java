@@ -4,45 +4,45 @@ package frgp.utn.edu.ar.models;
 public class Provincia  {
 
 
-	private int IdProvincia;
-	private String Provincia;
-	private Boolean Activo;
+	private int idProvincia;
+	private String provincia;
+	private Boolean activo;
 	
 	
 	
 	@Override
 	public String toString() {
-		return "Provincia [Provincia=" + Provincia + ", Provincia=" + Provincia + ", Activo=" + Activo + "]";
+		return "Provincia [Provincia=" + provincia + ", Activo=" + activo + "]";
 	}
 
 
 
 	public int getIdProvincia() {
-		return IdProvincia;
+		return idProvincia;
 	}
 
 
 
 	public String getProvincia() {
-		return Provincia;
+		return provincia;
 	}
 
 
 
 	public void setProvincia(String provincia) {
-		Provincia = provincia;
+		this.provincia = provincia;
 	}
 
 
 
 	public Boolean getActivo() {
-		return Activo;
+		return activo;
 	}
 
 
 
 	public void setActivo(Boolean activo) {
-		Activo = activo;
+		this.activo = activo;
 	}
 
 

@@ -2,43 +2,43 @@ package frgp.utn.edu.ar.models;
 
 public class Localidad {
 
-	private int CP;
-	private String Localidad;
+	private int cp;
+	private String localidad;
 	private Provincia provincia;
-	private Boolean Activo;
+	private Boolean activo;
 	
 	public Localidad() {
 		
 	}
 
 
-	public Localidad(int cP, String localidad, Boolean activo) {
-		CP = cP;
-		Localidad = localidad;
-		Activo = activo;
+	public Localidad(int cp, String localidad, Boolean activo) {
+		this.cp = cp;
+		this.localidad = localidad;
+		this.activo = activo;
 	}
 
 
 
-	public int getCP() {
-		return CP;
+	public int getCp() {
+		return cp;
 	}
-	public void setCP(int cP) {
-		CP = cP;
+	public void setCp(int cp) {
+		this.cp = cp;
 	}
 	public String getLocalidad() {
-		return Localidad;
+		return localidad;
 	}
 	public void setLocalidad(String localidad) {
-		Localidad = localidad;
+		this.localidad = localidad;
 	}
 	
 	public Boolean getActivo() {
-		return Activo;
+		return activo;
 	}
 
 	public void setActivo(Boolean activo) {
-		Activo = activo;
+		this.activo = activo;
 	}
 
 	public Provincia getProvincia() {
@@ -52,6 +52,6 @@ public class Localidad {
 
 	@Override
 	public String toString() {
-		return "Localidad [CP=" + CP + ", Localidad=" + Localidad + "]";
+		return "Localidad [CP=" + cp + ", Localidad=" + localidad + "]";
 	}
 }

@@ -4,35 +4,35 @@ import java.sql.Date;
 
 public class Movimiento {
 
-	private int IdMovimiento;
+	private int idMovimiento;
 	private TipoMovimiento tipoMovimiento;
-	private Date FechaAlta;
-	private String DetalleMovimiento;
-	private Double Importe;
-	private Cuenta Cuenta;
+	private Date fechaAlta;
+	private String detalleMovimiento;
+	private Double importe;
+	private Cuenta cuenta;
 
 	public Double getImporte() {
-		return Importe;
+		return importe;
 	}
 
 	public void setImporte(Double importe) {
-		Importe = importe;
+		this.importe = importe;
 	}
 
 	public Cuenta getCuenta() {
-		return Cuenta;
+		return cuenta;
 	}
 
 	public void setCuenta(Cuenta cuenta) {
-		Cuenta = cuenta;
+		this.cuenta = cuenta;
 	}
 
 	public int getIdMovimiento() {
-		return IdMovimiento;
+		return idMovimiento;
 	}	
 
 	public void setIdMovimiento(int idMovimiento) {
-		IdMovimiento = idMovimiento;
+		this.idMovimiento = idMovimiento;
 	}
 
 	public TipoMovimiento getTipoMovimiento() {
@@ -44,19 +44,19 @@ public class Movimiento {
 	}
 
 	public Date getFechaAlta() {
-		return FechaAlta;
+		return fechaAlta;
 	}
 
 	public void setFechaAlta(Date fechaAlta) {
-		FechaAlta = fechaAlta;
+		this.fechaAlta = fechaAlta;
 	}
 
 	public String getDetalleMovimiento() {
-		return DetalleMovimiento;
+		return detalleMovimiento;
 	}
 
 	public void setDetalleMovimiento(String detalleMovimiento) {
-		DetalleMovimiento = detalleMovimiento;
+		this.detalleMovimiento = detalleMovimiento;
 	}
 
 

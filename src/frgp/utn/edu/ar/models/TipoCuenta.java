@@ -3,19 +3,20 @@ package frgp.utn.edu.ar.models;
 public class TipoCuenta {
 	
 
-	private int IdTipoCuenta;
-	private String TipoCuenta;
-	private String Codigo;
+	private int idTipoCuenta;
+	private String tipoCuenta;
+	private String codigo;
+	private Boolean activo;
 	
 	public String getCodigo() {
-		return Codigo;
+		return codigo;
 	}
 
 	public void setCodigo(String codigo) {
-		this.Codigo = codigo;
+		this.codigo = codigo;
 	}
 
-	private Boolean Activo;
+
 	
 	public TipoCuenta()
 	{
@@ -23,27 +24,27 @@ public class TipoCuenta {
 	}
 
 	public int getIdTipoCuenta() {
-		return IdTipoCuenta;
+		return idTipoCuenta;
 	}
 
 	public void setIdTipoCuenta(int idTipoCuenta) {
-		IdTipoCuenta = idTipoCuenta;
+		this.idTipoCuenta = idTipoCuenta;
 	}
 
 	public String getTipoCuenta() {
-		return TipoCuenta;
+		return tipoCuenta;
 	}
 
 	public void setTipoCuenta(String tipoCuenta) {
-		TipoCuenta = tipoCuenta;
+		this.tipoCuenta = tipoCuenta;
 	}
 
 	public Boolean getActivo() {
-		return Activo;
+		return activo;
 	}
 
 	public void setActivo(Boolean activo) {
-		Activo = activo;
+		this.activo = activo;
 	}
 
 

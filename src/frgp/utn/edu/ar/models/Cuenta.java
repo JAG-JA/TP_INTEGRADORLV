@@ -5,31 +5,31 @@ import java.util.Date;
 public class Cuenta {
 
 	
-	private int IdCuenta;
+	private int idCuenta;
 	private String codigo;
 	private String descripcion;
-	private String Cbu;
-	private double Saldo;
-	private String NroCuenta;
-	private String NombreCuenta;
-	private Date FechaAlta;
-	private Boolean Activo;
-	private TipoCuenta TipoCuenta;
+	private String cbu;
+	private double saldo;
+	private String nroCuenta;
+	private String nombreCuenta;
+	private Date fechaAlta;
+	private Boolean activo;
+	private TipoCuenta tipoCuenta;
 
 	public int getId() {
-		return IdCuenta;
+		return idCuenta;
 	}
 
 	public void setId(int id) {
-		IdCuenta = id;
+		idCuenta = id;
 	}
 
 	public TipoCuenta getTipoCuenta() {
-		return TipoCuenta;
+		return tipoCuenta;
 	}
 
 	public void setTipoCuenta(TipoCuenta tipoCuenta) {
-		TipoCuenta = tipoCuenta;
+		this.tipoCuenta = tipoCuenta;
 	}
 
 	public String getCodigo() {
@@ -50,51 +50,51 @@ public class Cuenta {
 
 
 	public String getCbu() {
-		return Cbu;
+		return cbu;
 	}
 
 	public void setCbu(String cbu) {
-		Cbu = cbu;
+		this.cbu = cbu;
 	}
 
 	public double getSaldo() {
-		return Saldo;
+		return saldo;
 	}
 
 	public void setSaldo(double saldo) {
-		Saldo = saldo;
+		this.saldo = saldo;
 	}
 
 	public String getNroCuenta() {
-		return NroCuenta;
+		return nroCuenta;
 	}
 
 	public void setNroCuenta(String nroCuenta) {
-		NroCuenta = nroCuenta;
+		this.nroCuenta = nroCuenta;
 	}
 
 	public String getNombre() {
-		return NombreCuenta;
+		return nombreCuenta;
 	}
 
 	public void setNombre(String nombre) {
-		NombreCuenta = nombre;
+		this.nombreCuenta = nombre;
 	}
 
 	public Date getFechaCreacion() {
-		return FechaAlta;
+		return fechaAlta;
 	}
 
 	public void setFechaCreacion(Date fechaCreacion) {
-		FechaAlta = fechaCreacion;
+		this.fechaAlta = fechaCreacion;
 	}
 	
 	public Boolean getActivo() {
-		return Activo;
+		return activo;
 	}
 
 	public void setActivo(Boolean activo) {
-		Activo = activo;
+		this.activo = activo;
 	}
 
 	

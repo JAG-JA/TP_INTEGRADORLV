@@ -5,10 +5,10 @@ package frgp.utn.edu.ar.models;
 public class TipoMovimiento {
 	
 		
-		private int IdTipoMovimiento;
+		private int idTipoMovimiento;
 		private String movimiento;
-		private Boolean Activo;
-		private String Codigo;
+		private Boolean activo;
+		private String codigo;
 
 		public TipoMovimiento()
 		{
@@ -20,7 +20,7 @@ public class TipoMovimiento {
 		}
 		
 		public int getIdTipoMovimiento() {
-			return IdTipoMovimiento;
+			return idTipoMovimiento;
 		}
 
 		public void setMovimiento(String movimiento) {
@@ -28,19 +28,21 @@ public class TipoMovimiento {
 		}
 
 		public Boolean getActivo() {
-			return Activo;
-		}
-		public String getCodigo() {
-			return Codigo;
-		}
-
-		public void setCodigo(String codigo) {
-			this.Codigo = codigo;
+			return activo;
 		}
 		
 		public void setActivo(Boolean activo) {
-			Activo = activo;
+			this.activo = activo;
 		}
+		
+		public String getCodigo() {
+			return codigo;
+		}
+
+		public void setCodigo(String codigo) {
+			this.codigo = codigo;
+		}
+		
 		@Override
 		public String toString() {
 			return "TipoMovimiento [Movimiento=" + movimiento + "]";
