@@ -1,0 +1,10 @@
+package frgp.utn.edu.ar.main;
+
+public class Inicio {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
