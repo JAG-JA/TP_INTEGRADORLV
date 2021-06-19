@@ -2,9 +2,22 @@ package frgp.utn.edu.ar.models;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="CUENTA")
 public class Cuenta {
 
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCuenta;
 	private String codigo;
 	private String descripcion;
@@ -14,6 +27,8 @@ public class Cuenta {
 	private String nombreCuenta;
 	private Date fechaAlta;
 	private Boolean activo;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="tipoCuenta_c")
 	private TipoCuenta tipoCuenta;
 
 	public int getId() {
@@ -22,14 +37,6 @@ public class Cuenta {
 
 	public void setId(int id) {
 		idCuenta = id;
-	}
-
-	public TipoCuenta getTipoCuenta() {
-		return tipoCuenta;
-	}
-
-	public void setTipoCuenta(TipoCuenta tipoCuenta) {
-		this.tipoCuenta = tipoCuenta;
 	}
 
 	public String getCodigo() {
@@ -95,6 +102,14 @@ public class Cuenta {
 
 	public void setActivo(Boolean activo) {
 		this.activo = activo;
+	}
+
+	public TipoCuenta getTipoCuenta() {
+		return tipoCuenta;
+	}
+
+	public void setTipoCuenta(TipoCuenta tipoCuenta) {
+		this.tipoCuenta = tipoCuenta;
 	}
 
 	

@@ -1,8 +1,18 @@
 package frgp.utn.edu.ar.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TIPOCUENTA")
 public class TipoCuenta {
 	
-
+	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idTipoCuenta;
 	private String tipoCuenta;
 	private String codigo;
