@@ -1,10 +1,21 @@
 package frgp.utn.edu.ar.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="LOCALIDAD")
 public class Localidad {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private int cp;
 	private String localidad;
-	private Provincia provincia;
+	private Long idProvincia;
 	private Boolean activo;
 	
 	public Localidad() {
@@ -41,13 +52,13 @@ public class Localidad {
 		this.activo = activo;
 	}
 
-	public Provincia getProvincia() {
-		return provincia;
+	public Long getProvincia() {
+		return idProvincia;
 	}
 
 
-	public void setProvincia(Provincia provincia) {
-		this.provincia = provincia;
+	public void setProvincia(Long idProvincia) {
+		this.idProvincia = idProvincia;
 	}
 
 	@Override

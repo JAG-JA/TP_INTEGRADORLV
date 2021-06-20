@@ -1,11 +1,20 @@
 package frgp.utn.edu.ar.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="USUARIO")
 public class Usuario {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idUsuario;
 	private String userName;
 	private String password;
-	private Rol rol;
+	private Long rol;
 
 	public int getIdUsuario() {
 		return idUsuario;
@@ -25,10 +34,10 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Rol getRol() {
+	public Long getRol() {
 		return rol;
 	}
-	public void setRol(Rol rol) {
+	public void setRol(Long rol) {
 		this.rol = rol;
 	}
 	

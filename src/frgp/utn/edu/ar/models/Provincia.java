@@ -1,10 +1,18 @@
 package frgp.utn.edu.ar.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="PROVINCIA")
 public class Provincia  {
 
-
-	private int idProvincia;
+    @Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idProvincia;
 	private String provincia;
 	private Boolean activo;
 	
