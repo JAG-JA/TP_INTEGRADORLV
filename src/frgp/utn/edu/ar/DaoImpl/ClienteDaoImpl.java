@@ -29,11 +29,11 @@ public class ClienteDaoImpl  implements ClienteDao{
 	}
 
 	@Override
-	public Cliente save(Cliente object) {
+	public Cliente save(Cliente cliente) {
 	   Session session = HibernateConf.getSessionFactory().openSession();
-	   session.save(object); 
+	   session.save(cliente); 
 	   session.close();
-	   return object;
+	   return cliente;
 	}
 
 	@Override

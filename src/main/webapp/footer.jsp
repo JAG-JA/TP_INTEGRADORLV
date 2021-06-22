@@ -15,7 +15,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
-<title>Insert title here</title>
 
 <style type="text/css">
 .context-dark, .bg-gray-dark, .bg-primary {
@@ -79,24 +78,25 @@ ul, ol {
                
                
                </a>
-                <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
+                <p>TP integrador del Grupo de trabajo 12.</p>
+                <p>Alejandro Gonzalez / Martin Nazarre</p>
                 <!-- Rights-->
-                <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>Waves</span><span>. </span><span>All Rights Reserved.</span></p>
+                <p class="rights"><span>©  </span><span class="copyright-year">2021</span><span> </span><span>. </span><span>All Rights Reserved.</span></p>
               </div>
             </div>
             <div class="col-md-4">
               <h5>Contacts</h5>
               <dl class="contact-list">
                 <dt>Address:</dt>
-                <dd>798 South Park Avenue, Jaipur, Raj</dd>
+                <dd>1160 La Paz, Tortuguitas, Bs As</dd>
               </dl>
               <dl class="contact-list">
                 <dt>email:</dt>
-                <dd><a href="mailto:#">dkstudioin@gmail.com</a></dd>
+                <dd><a href="mailto:#">info@grupo12.com</a></dd>
               </dl>
               <dl class="contact-list">
                 <dt>phones:</dt>
-                <dd><a href="tel:#">https://karosearch.com</a> <span>or</span> <a href="tel:#">https://karosearch.com</a>
+                <dd><a href="tel:#">https://grupo12.com</a> <span>or</span> <a href="tel:#">https://grupo12.com</a>
                 </dd>
               </dl>
             </div>
