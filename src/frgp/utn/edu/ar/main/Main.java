@@ -1,7 +1,8 @@
-package frgp.utn.edu.ar.config;
+package frgp.utn.edu.ar.main;
 
 import org.hibernate.SessionFactory;
 
+import frgp.utn.edu.ar.config.HibernateConf;
 import frgp.utn.edu.ar.util.Load;
 
 public class Main {
