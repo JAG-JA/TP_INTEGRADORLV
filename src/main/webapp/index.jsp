@@ -34,9 +34,9 @@
                 </ul>
                 <div class="login">
                 	<a href="#" data-toggle="modal" onclick="onClick();"  data-target="#login-modal" class="login-btn"><i class="fa fa-sign-in"></i>
-                	<span class="d-none d-md-inline-block">Sign In</span></a>
+                	<span class="d-none d-md-inline-block">LogIn</span></a>
                 	<a href="customer-register.html" class="signup-btn"><i class="fa fa-user"></i>
-                	<span class="d-none d-md-inline-block">Sign Up</span></a>
+                	<span class="d-none d-md-inline-block">Register</span></a>
                 </div>
                 <ul class="social-custom list-inline">
                   <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
