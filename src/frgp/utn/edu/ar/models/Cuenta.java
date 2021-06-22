@@ -30,6 +30,7 @@ public class Cuenta {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="tipoCuenta_c")
 	private TipoCuenta tipoCuenta;
+	
 
 	public int getId() {
 		return idCuenta;

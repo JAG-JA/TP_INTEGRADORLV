@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
-//Mapeo la entidad cliente con la tabla CLIENTE
+
 @Entity
 @Table(name="CLIENTE")
 public class Cliente {
@@ -33,9 +33,9 @@ public class Cliente {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="localidad_c")
 	private Localidad localidad;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="provincia_c")
-	private Provincia provincia;
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name="provincia_c")
+//	private Provincia provincia;
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="ususario_c")
 	private Usuario usuario;
@@ -101,12 +101,12 @@ public class Cliente {
 	public void setLocalidad(Localidad localidad) {
 		this.localidad = localidad;
 	}
-	public Provincia getProvincia() {
-		return provincia;
-	}
-	public void setProvincia(Provincia provincia) {
-		this.provincia = provincia;
-	}
+//	public Provincia getProvincia() {
+//		return provincia;
+//	}
+//	public void setProvincia(Provincia provincia) {
+//		this.provincia = provincia;
+//	}
 	public Usuario getUsuario() {
 		return usuario;
 	}

@@ -29,8 +29,9 @@ public class Rol {
 		this.rol = rol;
 	}	
 	
-	public Rol() {
-		
+	public Rol(int idRol,String rol) {
+		this.idRol = idRol;
+		this.rol = rol;
 	}
 	
 }

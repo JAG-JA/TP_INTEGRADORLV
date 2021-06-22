@@ -16,6 +16,8 @@ public class Usuario {
 	private String password;
 	private Long rol;
 
+	
+	
 	public int getIdUsuario() {
 		return idUsuario;
 	}
@@ -44,5 +46,16 @@ public class Usuario {
 	public Usuario()
 	{
 		
+	}
+	public Usuario(String usr, String pass)
+	{
+		 this.userName = usr;
+		 this.password = pass;
+	}
+	public Usuario(String usr, String pass,Long idRol)
+	{
+		 this.userName = usr;
+		 this.password = pass;
+		 this.rol = idRol;
 	}
 }
