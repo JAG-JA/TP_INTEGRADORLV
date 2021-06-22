@@ -1,9 +1,12 @@
 package frgp.utn.edu.ar.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,19 +18,25 @@ public class Localidad {
 	private int id;
 	private int cp;
 	private String localidad;
-	private Long idProvincia;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="provincia_c")
+	private Provincia provincia;
 	private Boolean activo;
 	
-	public Localidad() {
-		
+	public Provincia getProvincia() {
+		return provincia;
 	}
 
-
-	public Localidad(int cp, String localidad, Boolean activo) {
-		this.cp = cp;
-		this.localidad = localidad;
-		this.activo = activo;
+	public void setProvincia(Provincia provincia) {
+		this.provincia = provincia;
 	}
+	public Localidad(int cp, String localidad, Provincia provincia) {
+		 this.cp = cp;
+		 this.localidad = localidad;
+		 this.provincia = provincia;
+		 this.activo = true;
+	}
+
 
 
 
@@ -52,14 +61,7 @@ public class Localidad {
 		this.activo = activo;
 	}
 
-	public Long getProvincia() {
-		return idProvincia;
-	}
 
-
-	public void setProvincia(Long idProvincia) {
-		this.idProvincia = idProvincia;
-	}
 
 	@Override
 	public String toString() {

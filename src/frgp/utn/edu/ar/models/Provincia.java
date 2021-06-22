@@ -16,7 +16,11 @@ public class Provincia  {
 	private String provincia;
 	private Boolean activo;
 	
-	
+
+	public Provincia(String provincia) {
+	   this.provincia = provincia;
+		this.activo = true;
+	}
 	
 	@Override
 	public String toString() {
@@ -55,7 +59,4 @@ public class Provincia  {
 
 
 
-	public Provincia() {
-		
-	}
 }
