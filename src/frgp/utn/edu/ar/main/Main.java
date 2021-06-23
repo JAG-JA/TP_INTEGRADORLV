@@ -12,14 +12,9 @@ import frgp.utn.edu.ar.util.Load;
 public class Main {
 
 	public static void main(String[] args) {
-		//Instancio un objeto session factory, aca se crearan las tablas de la base de dato segun el model. 
+	//Instancio un objeto session factory, aca se crearan las tablas de la base de dato segun el model. 
 	 SessionFactory session  =  HibernateConf.getSessionFactory();
 	  
-	 
-	 Load sLoad= new Load();
-	 sLoad.cargarCliente(10);
-	 
-	 //session.close();
 
 	 //----------------Rol------------------//
 	 RolDaoImpl rolDao = new  RolDaoImpl();
@@ -30,6 +25,15 @@ public class Main {
 	 rolDao.save(rol1);
 	 rolDao.save(rol2);
 	 //--------------------------------------//
+	 
+
+	 //----------------Clientes--------------//
+	 Load sLoad= new Load();
+	 sLoad.cargarCliente(10);
+	 //--------------------------------------//
+	 
+
+
 
 
 	 
