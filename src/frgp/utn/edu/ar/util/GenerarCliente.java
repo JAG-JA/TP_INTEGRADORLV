@@ -8,6 +8,7 @@ import frgp.utn.edu.ar.models.Cliente;
 import frgp.utn.edu.ar.models.Cuenta;
 import frgp.utn.edu.ar.models.Localidad;
 import frgp.utn.edu.ar.models.Provincia;
+import frgp.utn.edu.ar.models.Rol;
 import frgp.utn.edu.ar.models.Usuario;
 
 
@@ -17,6 +18,7 @@ public class GenerarCliente {
 	public static Cliente  genearCliente() {
 		 
 		Cliente sCliente = new Cliente();
+		Rol sRol = new Rol(1, "Activo");
 	    String nombreApellido [] = 	NombresAleatorios.generarNombresAleatorios(1);
 	    sCliente.setNombre(nombreApellido[0].split("-")[0]);
 	    sCliente.setApellido(nombreApellido[0].split("-")[1]);
@@ -24,11 +26,12 @@ public class GenerarCliente {
 	    sListCuenta.add(getCuenta()); 
 	    sCliente.setCuenta(sListCuenta);
 	    sCliente.setLocalidad(new Localidad(1665,NombresAleatorios.generarNombresAleatoriosLoc(1)[0] , new Provincia(NombresAleatorios.generarNombresAleatoriosProvi(1)[0])));
-	    sCliente.setUsuario(new Usuario(sCliente.getNombre(), "1234",1L));
+	    sCliente.setUsuario(new Usuario(sCliente.getNombre(), "1234",sRol));
 	    return sCliente;
 		 
 		
 	}
+	
 	public static Cuenta getCuenta() {
 		Cuenta sCuenta = new Cuenta();
 		sCuenta.setActivo(true);

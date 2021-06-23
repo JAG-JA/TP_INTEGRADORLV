@@ -14,7 +14,7 @@ public class Usuario {
 	private int idUsuario;
 	private String userName;
 	private String password;
-	private Long rol;
+	private Rol rol;
 
 	
 	
@@ -36,10 +36,10 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Long getRol() {
+	public Rol getRol() {
 		return rol;
 	}
-	public void setRol(Long rol) {
+	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
 	
@@ -52,10 +52,10 @@ public class Usuario {
 		 this.userName = usr;
 		 this.password = pass;
 	}
-	public Usuario(String usr, String pass,Long idRol)
+	public Usuario(String usr, String pass,Rol rol)
 	{
 		 this.userName = usr;
 		 this.password = pass;
-		 this.rol = idRol;
+		 this.rol = rol;
 	}
 }
