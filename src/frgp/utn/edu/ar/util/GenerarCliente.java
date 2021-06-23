@@ -23,7 +23,7 @@ public class GenerarCliente {
 	    List<Cuenta> sListCuenta = new ArrayList<Cuenta>();
 	    sListCuenta.add(getCuenta()); 
 	    sCliente.setCuenta(sListCuenta);
-	    sCliente.setLocalidad(new Localidad(1665,NombresAleatorios.generarNombresAleatoriosProv(1)[0] , new Provincia("BS AS")));
+	    sCliente.setLocalidad(new Localidad(1665,NombresAleatorios.generarNombresAleatoriosLoc(1)[0] , new Provincia(NombresAleatorios.generarNombresAleatoriosProvi(1)[0])));
 	    sCliente.setUsuario(new Usuario(sCliente.getNombre(), "1234",1L));
 	    return sCliente;
 		 

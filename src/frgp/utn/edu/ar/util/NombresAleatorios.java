@@ -26,10 +26,10 @@ public class NombresAleatorios {
 		}
 	}
 	
-	public static String[] generarNombresAleatoriosProv(int cantidad) {
+	public static String[] generarNombresAleatoriosLoc(int cantidad) {
 		String[] nombresAleatorios = new String[cantidad];
 
-		String[] localidades = { "José c Paz", "San Miguel", "Tortuguitas", "Pacheco"};
+		String[] localidades = { "José c Paz", "San Miguel", "Tortuguitas", "Pacheco","San Fernando","Pergamino","Salto","Bahia Blanca","Capitan Sarmiento","Coronel Suarez","Pilar"};
 		
 
 		for (int i = 0; i < cantidad; i++) {
@@ -37,4 +37,21 @@ public class NombresAleatorios {
 		}
 		return nombresAleatorios;
 	}
+
+	
+	public static String[] generarNombresAleatoriosProvi(int cantidad) {
+		String[] nombresAleatorios = new String[cantidad];
+
+		String[] provincias = { "Córdoba", "Corrientes", "Santa Fe", "San Luis","Chaco","Mendoza","Salta","Formosa","Tucuman","Buenos Aires","Tierra del Fuego","Jujuy","San Juan","Chubut","Santa Cruz","La Pampa","Santiago del Estero"};
+	
+		for (int i = 0; i < cantidad; i++) {
+			nombresAleatorios[i] = provincias[(int) (Math.floor(Math.random() * ((provincias.length - 1) - 0 + 1) + 0))];
+		}
+		return nombresAleatorios;
+	}
+
+
+	
+	
+	
 }
