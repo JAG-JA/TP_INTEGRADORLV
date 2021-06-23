@@ -18,7 +18,7 @@ public class GenerarCliente {
 	public static Cliente  genearCliente() {
 		 
 		Cliente sCliente = new Cliente();
-		Rol sRol = new Rol(1, "Activo");
+		Rol sRol = new Rol(2, "Cliente");
 	    String nombreApellido [] = 	NombresAleatorios.generarNombresAleatorios(1);
 	    sCliente.setNombre(nombreApellido[0].split("-")[0]);
 	    sCliente.setApellido(nombreApellido[0].split("-")[1]);
