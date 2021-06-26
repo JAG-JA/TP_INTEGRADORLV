@@ -2,12 +2,15 @@ package frgp.utn.edu.ar.ServiciosImpl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import frgp.utn.edu.ar.Dao.UsuarioDao;
 import frgp.utn.edu.ar.DaoImpl.UsuarioDaoImpl;
 import frgp.utn.edu.ar.Servicios.UsuarioService;
 import frgp.utn.edu.ar.models.Usuario;
 
 
+@Service
 public class UsuarioServiceImpl implements UsuarioService {
 
 	private UsuarioDao  usuariDao  = new  UsuarioDaoImpl();
@@ -50,8 +53,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public Usuario getUser(Usuario usr)  {
-	   Usuario usuario = usuariDao.getUser(usr);
-	   return usuario;
+	   return usuariDao.getUser(usr);
 	}
 
 }

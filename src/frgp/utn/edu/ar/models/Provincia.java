@@ -17,6 +17,9 @@ public class Provincia  {
 	private Boolean activo;
 	
 
+	public Provincia() {
+		// TODO Auto-generated constructor stub
+	}
 	public Provincia(String provincia) {
 	   this.provincia = provincia;
 		this.activo = true;

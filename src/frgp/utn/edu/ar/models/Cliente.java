@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,11 +34,8 @@ public class Cliente {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="localidad_c")
 	private Localidad localidad;
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name="provincia_c")
-//	private Provincia provincia;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="ususario_c")
+	@JoinColumn(name="usuario_c")
 	private Usuario usuario;
 	
 	@OneToMany(cascade = CascadeType.ALL)

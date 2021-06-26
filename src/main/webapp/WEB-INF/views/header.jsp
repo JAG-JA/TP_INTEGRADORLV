@@ -15,22 +15,30 @@
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
-<title>TP Home Banking</title>
+<title>Insert title here</title>
 </head>
 
 <div class="top-bar">
         <div class="container">
           <div class="row d-flex align-items-center">
-            <div class="col-md-6 d-md-block d-none">
-              <p>Contacto +91 1112223311 o info@grupo12.com</p>
-            </div>
+           
             <div class="col-md-6">
               <div class="d-flex justify-content-md-end justify-content-between">
                 <ul class="list-inline contact-info d-block d-md-none">
                   <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
                   <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                 </ul>
-                <div class="login"><a href="#" data-toggle="modal" data-target="#login-modal" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">LogIn</span></a><a href="customer-register.html" class="signup-btn"><i class="fa fa-user"></i></a></div>
+              
+                <div class="login">
+                	<a href="login"  class="login-btn">
+               			 <i class="fa fa-sign-in"></i>
+                         <span class="d-none d-md-inline-block">Login</span>
+                    </a>
+                	<a href="registrar" class="signup-btn"><i class="fa fa-user"></i>
+               			 <span class="d-none d-md-inline-block">Registrar</span>
+               	    </a>
+               	 </div>
+                
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import javax.persistence.Query;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.NativeQuery;
 
 import frgp.utn.edu.ar.Dao.UsuarioDao;
 import frgp.utn.edu.ar.config.HibernateConf;
@@ -53,7 +54,7 @@ public class UsuarioDaoImpl implements UsuarioDao {
 
 	}
 
-	@Override
+	/*@Override
 	public Usuario getUser(Usuario usr) {
     
 	 Session session = HibernateConf.getSessionFactory().openSession();
@@ -64,6 +65,19 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	 
 	 Usuario usuarioValid = (Usuario) sList.get(0);
 	return usuarioValid;
-	}
+	}*/
+	
+	@SuppressWarnings({ "deprecation", "rawtypes" })
+	@Override
+	public Usuario getUser(Usuario usr) {
+    
+	 Session session = HibernateConf.getSessionFactory().openSession();
+	 NativeQuery query =  session.createSQLQuery("SELECT * FROM USUARIO WHERE USERNAME =:USUARIO AND PASSWORD =:PASS");	 
+	 query.setParameter("USUARIO", usr.getUserName());
+	 query.setParameter("PASS", usr.getPassword());
+	 query.addEntity(Usuario.class);
+	 List<?>  sList =  query.getResultList();
+	 
+	 return    sList.size() > 0 ? (Usuario) sList.get(0)  : null;
 
 }

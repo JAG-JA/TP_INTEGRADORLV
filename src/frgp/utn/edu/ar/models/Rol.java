@@ -16,6 +16,11 @@ public class Rol {
 	private String rol;
 	
 	
+	public Rol() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	public int getIdRol() {
 		return idRol;
 	}

@@ -23,6 +23,11 @@ public class Localidad {
 	private Provincia provincia;
 	private Boolean activo;
 	
+	
+	public Localidad() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Provincia getProvincia() {
 		return provincia;
 	}
