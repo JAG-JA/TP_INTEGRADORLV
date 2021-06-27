@@ -11,6 +11,7 @@ import frgp.utn.edu.ar.models.Cliente;
 
 public class ClienteDaoImpl  implements ClienteDao{
 
+	Session session =  HibernateConf.getSessionFactory().openSession();
 
 	@Override
 	public Cliente findByName(String name) {	
@@ -51,6 +52,18 @@ public class ClienteDaoImpl  implements ClienteDao{
 	@Override
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@SuppressWarnings({ "deprecation", "rawtypes" })
+	@Override
+	public Cliente findClienteByUsuario(int idUsuario) {
+	    
+		NativeQuery  query = session.createSQLQuery("SELECT * FROM CLIENTE WHERE USUARIO_C = :ID");
+		query.addEntity(Cliente.class);
+		query.setParameter("ID", idUsuario);
+	    List<?>  sList =  query.getResultList();
+	    return    sList.size() > 0 ? (Cliente) sList.get(0)  : null; 
 		
 	}
 

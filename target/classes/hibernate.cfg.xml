@@ -22,6 +22,7 @@
     <mapping class="frgp.utn.edu.ar.models.TipoCuenta" />
     <mapping class="frgp.utn.edu.ar.models.TipoMovimiento" />
     <mapping class="frgp.utn.edu.ar.models.Usuario" />
+    <mapping class="frgp.utn.edu.ar.models.Transferencia" />
     
     
   </session-factory>
