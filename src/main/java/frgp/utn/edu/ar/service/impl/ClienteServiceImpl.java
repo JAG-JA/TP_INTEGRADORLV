@@ -1,13 +1,20 @@
 package frgp.utn.edu.ar.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import frgp.utn.edu.ar.dao.ClienteDao;
-import frgp.utn.edu.ar.service.ClienteService;
 import frgp.utn.edu.ar.models.Cliente;
+import frgp.utn.edu.ar.models.Cuenta;
+import frgp.utn.edu.ar.models.Rol;
+import frgp.utn.edu.ar.models.Usuario;
+import frgp.utn.edu.ar.service.ClienteService;
+import frgp.utn.edu.ar.util.GenerarCliente;
+
+
 
 @Service
 public class ClienteServiceImpl  implements ClienteService{
@@ -23,30 +30,34 @@ public class ClienteServiceImpl  implements ClienteService{
 	@Override
 	public List<Cliente> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return clienteDao.findAll();
 	}
 
 	@Override
 	public Cliente findById(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return clienteDao.findById(id);
 	}
 
 	@Override
 	public Cliente save(Cliente object) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Cuenta> sListCuenta = new ArrayList<Cuenta>();
+		sListCuenta.add(GenerarCliente.getCuenta());
+		object.setCuenta(sListCuenta);
+		Usuario usr =new Usuario(object.getApellido(), "1234" , new Rol(1));
+		object.setUsuario(usr);
+		return clienteDao.save(object);
 	}
 
 	@Override
 	public void delete(Cliente object) {
-		// TODO Auto-generated method stub
+		 clienteDao.delete(object);
 		
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
+		 clienteDao.deleteById(id);
 		
 	}
 	@Override

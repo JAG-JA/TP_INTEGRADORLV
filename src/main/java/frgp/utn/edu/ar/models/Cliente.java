@@ -37,6 +37,7 @@ public class Cliente {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="usuario_c")
 	private Usuario usuario;
+	private Boolean activo;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="cuenta_c")
@@ -117,6 +118,16 @@ public class Cliente {
 	}
 	public void setCuenta(List<Cuenta> cuentaList) {
 		this.cuentaList = cuentaList;
+	}
+
+
+	public Boolean getActivo() {
+		return activo;
+	}
+
+
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
 	}
 	
 }

@@ -9,6 +9,8 @@ import frgp.utn.edu.ar.dao.HistorialDao;
 import frgp.utn.edu.ar.models.Movimiento;
 import frgp.utn.edu.ar.service.HistorialService;
 
+
+
 @Service
 public class HistorialServiceImpl implements HistorialService {
 	
@@ -30,7 +32,7 @@ public class HistorialServiceImpl implements HistorialService {
 	@Override
 	public Movimiento findById(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return historialDao.findById(id);
 	}
 
 	@Override

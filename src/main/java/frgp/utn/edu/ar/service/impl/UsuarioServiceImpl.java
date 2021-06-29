@@ -6,8 +6,9 @@ import org.springframework.stereotype.Service;
 
 import frgp.utn.edu.ar.dao.UsuarioDao;
 import frgp.utn.edu.ar.dao.impl.UsuarioDaoImpl;
-import frgp.utn.edu.ar.service.UsuarioService;
 import frgp.utn.edu.ar.models.Usuario;
+import frgp.utn.edu.ar.service.UsuarioService;
+
 
 
 @Service

@@ -3,11 +3,12 @@ package frgp.utn.edu.ar.dao.impl;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
 
 import frgp.utn.edu.ar.dao.MovimientoDao;
 import frgp.utn.edu.ar.config.HibernateConf;
 import frgp.utn.edu.ar.models.Movimiento;
-
+@Repository
 public class MovimientoDaoImpl implements MovimientoDao{
 
 	@Override

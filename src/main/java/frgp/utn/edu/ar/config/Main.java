@@ -14,7 +14,7 @@ public class Main {
 		 //----------------Rol------------------//
 		 RolDaoImpl rolDao = new  RolDaoImpl();
 
-		 Rol rol1 = new Rol(1,"Adminitrador");
+		 Rol rol1 = new Rol(1,"Administrador");
 		 Rol rol2 = new Rol(2,"Cliente");
 		 
 		 rolDao.save(rol1);

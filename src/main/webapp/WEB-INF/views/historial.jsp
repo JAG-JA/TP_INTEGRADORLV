@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +8,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
 <title>Banco online</title>
@@ -46,28 +43,18 @@
 					      <th scope="col">Fecha</th>
 					      <th scope="col">Concepto</th>
 					      <th scope="col">Importe</th>
-					      <th scope="col">Saldo</th>
+					  
 					    </tr>
 					  </thead>
 					  <tbody>
-					    <tr>
-					      <th scope="row">19/06/2021</th>
-					      <td>DEBITO TARJ BA</td>
-					      <td>-742,00</td>
-					      <td>14.203,97</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">19/06/2021</th>
-					      <td>Transferencia</td>
-					      <td>-100,00</td>
-					      <td>13.203,97</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">19/06/2021</th>
-					      <td>Transferencia</td>
-					      <td>-742,00</td>
-					      <td>14.203,97</td>
-					    </tr>
+					  <c:forEach var="mov" items="${movimiento}">
+						    <tr>
+						      <th scope="row">${mov.fechaAlta}</th>
+						      <td>${mov.detalleMovimiento}</td>
+						      <td>${mov.importe}</td>
+						     
+						    </tr>
+					  </c:forEach>
 					  </tbody>
 					</table>
       		 </div>

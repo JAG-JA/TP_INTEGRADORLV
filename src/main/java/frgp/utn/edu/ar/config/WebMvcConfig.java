@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "ar.com.utn.integrador"})
+@ComponentScan(basePackages = { "frgp.utn.edu.ar"})
 public class WebMvcConfig implements WebMvcConfigurer {
 
    @Bean
@@ -24,6 +24,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
       resolver.setSuffix(".jsp");
       return resolver;
    }
+   
    @Override
    public void addResourceHandlers(ResourceHandlerRegistry registry) {
 	   registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/js/");

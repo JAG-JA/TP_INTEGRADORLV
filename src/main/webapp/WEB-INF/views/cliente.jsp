@@ -1,17 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ <link rel="stylesheet" type="text/css" href="css/style.css"/>---->
  <link rel="stylesheet" th:href="@{/css/style.css}">
 <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
@@ -34,77 +31,39 @@
          </div>
      </div>
   </div>
-  <div class="container">
+   <div class="container">
       <div class="row">
            <div class="col-md-8">
-      		<h4><span>Cuentas</span></h4>
-      		<div class="card" style="margin-bottom: 31px;">
-			  <div class="card-body">
-			     <div class="row">
-			        <div class="col-md-6">
-			           <span><b>Caja de Ahorro$</b> 000000001 </span>
-			        </div>
-			          <div class="col-md-6">
-			           <span><b>Saldo$</b> 000000001 </span>
-			        </div>
-			     </div>
-			  </div>
-			  <div class="card-footer">
-			   <div class="row">
-			        <div class="col-md-6">
-			          <a><span style="color:blue">Transferir</span></a> 
-			        </div>
-			          <div class="col-md-6">
-			             <a><span style="color:blue">Historial </span></a>
-			        </div>
-			     </div>
-			  </div>
-			</div>
+      		<h4><span>Bienvenido ${cliente.apellido} ${cliente.nombre}</span></h4>
+      		
+      		<c:forEach var="cuenta" items="${sListCuenta}">
+		
+				  <div class="card" style="margin-bottom: 31px;">
+				  <div class="card-body">
+				     <div class="row">
+				        <div class="col-md-6">
+				           <span><b>Caja de Ahorro$ </b> ${cuenta.nroCuenta} </span>
+				        </div>
+				          <div class="col-md-6">
+				           <span><b>Saldo$ </b> ${cuenta.saldo} </span>
+				        </div>
+				     </div>
+				  </div>
+				  <div class="card-footer">
+				   <div class="row">
+				        <div class="col-md-6">
+				          <a><span style="color:blue">Transferir</span></a> 
+				        </div>
+				          <div class="col-md-6">
+				             <a href="historial/${cuenta.id}" ><span style="color:blue">Historial </span></a>
+				        </div>
+				     </div>
+				  </div>
+				</div>
+				<br>
 			
-			<div class="card" style="margin-bottom: 31px;">
-			  <div class="card-body">
-			     <div class="row">
-			        <div class="col-md-6">
-			           <span><b>Caja de ahorro US$</b> 000000003 </span>
-			        </div>
-			          <div class="col-md-6">
-			           <span><b>Saldo$</b> 0000000013 </span>
-			        </div>
-			     </div>
-			  </div>
-			  <div class="card-footer">
-			   <div class="row">
-			        <div class="col-md-6">
-			          <a><span style="color:blue">Transferir</span></a> 
-			        </div>
-			          <div class="col-md-6">
-			             <a><span style="color:blue">Historial </span></a>
-			        </div>
-			     </div>
-			  </div>
-			</div>
-			<div class="card" style="margin-bottom: 31px;">
-			  <div class="card-body">
-			     <div class="row">
-			        <div class="col-md-6">
-			           <span><b>Cuenta corriente$</b> 000000004 </span>
-			        </div>
-			          <div class="col-md-6">
-			           <span><b>Saldo$</b> 000000004 </span>
-			        </div>
-			     </div>
-			  </div>
-			  <div class="card-footer">
-			   <div class="row">
-			        <div class="col-md-6">
-			          <a><span style="color:blue">Transferir</span></a> 
-			        </div>
-			          <div class="col-md-6">
-			             <a><span style="color:blue">Historial </span></a>
-			        </div>
-			     </div>
-			  </div>
-			</div>
+			</c:forEach>
+
       		  	
       	   </div>
       	   <div class="col-md-4" >
@@ -136,6 +95,7 @@
  
     
 </div>
+   	
     <jsp:include page="footer.jsp"/>
 </body>
 

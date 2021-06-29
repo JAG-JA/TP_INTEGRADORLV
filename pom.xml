@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>frgp.utn.edu.ar</groupId>
-  <artifactId>TP_L5_GRUPO_12</artifactId>
+  <artifactId>integrador</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
@@ -65,7 +65,7 @@
   </dependencies>
 
   <build>
-    <finalName>TP_L5_GRUPO_12</finalName>
+    <finalName>integrador</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

@@ -4,54 +4,59 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.query.NativeQuery;
-
-import frgp.utn.edu.ar.dao.ClienteDao;
+import org.springframework.stereotype.Repository;
 import frgp.utn.edu.ar.config.HibernateConf;
+import frgp.utn.edu.ar.dao.ClienteDao;
 import frgp.utn.edu.ar.models.Cliente;
 
-public class ClienteDaoImpl  implements ClienteDao{
 
+@Repository
+public class ClienteDaoImpl  implements ClienteDao{
+   
 	Session session =  HibernateConf.getSessionFactory().openSession();
 
 	@Override
 	public Cliente findByName(String name) {	
 	    
-		NativeQuery  query = session.createSQLQuery("SELECT * FROM CLIENTE WHERE NOMBRE = :NOMBRE");
+		NativeQuery  query = session.createSQLQuery("SELECT * FROM CLIENTE WHERE NOMBRE = :NOMBRE AND ACTIVO = 1");
 		query.addEntity(Cliente.class);
 		query.setParameter("NOMBRE", name);
 	    List<?>  sList =  query.getResultList();
 	    return    sList.size() > 0 ? (Cliente) sList.get(0)  : null;
 	}
-	
+
+	@SuppressWarnings("deprecation")
 	@Override
 	public List<Cliente> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		NativeQuery  query = session.createSQLQuery("SELECT * FROM CLIENTE WHERE  ACTIVO = 1");
+		query.addEntity(Cliente.class);
+		return  query.getResultList();
 	}
 
 	@Override
 	public Cliente findById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	   	return session.get(Cliente.class, id.intValue());
 	}
 
 	@Override
-	public Cliente save(Cliente cliente) {
+	public Cliente save(Cliente object) {
 	   Session session = HibernateConf.getSessionFactory().openSession();
-	   session.save(cliente); 
+	   session.save(object); 
 	   session.close();
-	   return cliente;
+	   return object;
 	}
 
 	@Override
 	public void delete(Cliente object) {
-		// TODO Auto-generated method stub
+		session.delete(object);
 		
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
+		NativeQuery  query = session.createSQLQuery("UPDATE CLIENTE SET ACTIVO = 0 WHERE  ID = :ID");
+		query.addEntity(Cliente.class);
+		query.executeUpdate();
 		
 	}
 
@@ -66,5 +71,6 @@ public class ClienteDaoImpl  implements ClienteDao{
 	    return    sList.size() > 0 ? (Cliente) sList.get(0)  : null; 
 		
 	}
+
 
 }

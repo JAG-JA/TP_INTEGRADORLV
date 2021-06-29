@@ -4,7 +4,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 public class AppInitializer  extends AbstractAnnotationConfigDispatcherServletInitializer{
 
-	  //>Hago referencia al archivo 
+	  //Hago referencia al archivo 
 	 @Override
 	   protected Class<?>[] getRootConfigClasses() {
 	      return new Class[] { HibernateConf.class };

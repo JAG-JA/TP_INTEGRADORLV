@@ -2,9 +2,14 @@ package frgp.utn.edu.ar.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
+
+import frgp.utn.edu.ar.config.HibernateConf;
 import frgp.utn.edu.ar.dao.LocalidadDao;
 import frgp.utn.edu.ar.models.Localidad;
 
+@Repository
 public class LocalidadDaoImpl implements LocalidadDao {
 
 	@Override
@@ -15,8 +20,9 @@ public class LocalidadDaoImpl implements LocalidadDao {
 
 	@Override
 	public List<Localidad> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		Session session =  HibernateConf.getSessionFactory().openSession();
+		return  session.createCriteria(Localidad.class).list();
+		
 	}
 
 	@Override
@@ -41,12 +47,6 @@ public class LocalidadDaoImpl implements LocalidadDao {
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 
-	}
-
-	@Override
-	public List<Localidad> obtieneLocalidadescercanas(Integer CP) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

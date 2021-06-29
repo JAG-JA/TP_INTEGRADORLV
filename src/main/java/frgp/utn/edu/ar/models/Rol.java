@@ -20,6 +20,10 @@ public class Rol {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Rol(int idRol) {
+	   this.idRol = idRol;
+	}
+	
 	
 	public int getIdRol() {
 		return idRol;

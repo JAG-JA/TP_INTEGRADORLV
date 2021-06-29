@@ -5,51 +5,49 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import frgp.utn.edu.ar.dao.CuentaDao;
-import frgp.utn.edu.ar.models.Cuenta;
-import frgp.utn.edu.ar.service.CuentaService;
-
+import frgp.utn.edu.ar.dao.LocalidadDao;
+import frgp.utn.edu.ar.models.Localidad;
+import frgp.utn.edu.ar.service.LocalidadService;
 
 @Service
-public class CuentaServiceImpl implements CuentaService {
-	
+public class LocalidadServiceImpl implements LocalidadService {
+
 	@Autowired
-	private CuentaDao cuentaDao;
-
+	private LocalidadDao localidadDao;
 	@Override
-	public Cuenta findByName(String name) {
+	public Localidad findByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Cuenta> findAll() {
+	public List<Localidad> findAll() {
+		// TODO Auto-generated method stub
+		return localidadDao.findAll();
+	}
+
+	@Override
+	public Localidad findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Cuenta findById(Long id) {
-		// TODO Auto-generated method stub
-		return cuentaDao.findById(id);
-	}
-
-	@Override
-	public Cuenta save(Cuenta object) {
+	public Localidad save(Localidad object) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void delete(Cuenta object) {
+	public void delete(Localidad object) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

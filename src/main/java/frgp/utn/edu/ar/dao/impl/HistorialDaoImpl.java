@@ -2,17 +2,14 @@ package frgp.utn.edu.ar.dao.impl;
 
 import java.util.List;
 
-import javax.persistence.Query;
-
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
 
 import frgp.utn.edu.ar.config.HibernateConf;
 import frgp.utn.edu.ar.dao.HistorialDao;
-import frgp.utn.edu.ar.models.Cliente;
 import frgp.utn.edu.ar.models.Movimiento;
+
 
 @Repository
 public class HistorialDaoImpl implements HistorialDao {

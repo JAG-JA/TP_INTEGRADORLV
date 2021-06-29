@@ -9,9 +9,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
 
-import frgp.utn.edu.ar.dao.UsuarioDao;
 import frgp.utn.edu.ar.config.HibernateConf;
+import frgp.utn.edu.ar.dao.UsuarioDao;
 import frgp.utn.edu.ar.models.Usuario;
+
+
 
 @Repository
 public class UsuarioDaoImpl implements UsuarioDao {
