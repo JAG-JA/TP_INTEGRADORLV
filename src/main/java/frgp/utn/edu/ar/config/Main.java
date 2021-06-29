@@ -2,8 +2,11 @@ package frgp.utn.edu.ar.config;
 
 import org.hibernate.SessionFactory;
 
+import frgp.utn.edu.ar.dao.TipoMovimientoDao;
 import frgp.utn.edu.ar.dao.impl.RolDaoImpl;
+import frgp.utn.edu.ar.dao.impl.TipoMovimientoDaoImpl;
 import frgp.utn.edu.ar.models.Rol;
+import frgp.utn.edu.ar.models.TipoMovimiento;
 import frgp.utn.edu.ar.util.Load;
 
 public class Main {
@@ -19,6 +22,16 @@ public class Main {
 		 
 		 rolDao.save(rol1);
 		 rolDao.save(rol2);
+		 //--------------------------------------//
+		 
+		 //----------------Tipo Movimiento------------------//
+		 TipoMovimientoDaoImpl TmDao = new  TipoMovimientoDaoImpl();
+
+		 TipoMovimiento tm1 = new TipoMovimiento("Ingreso");
+		 TipoMovimiento tm2 = new TipoMovimiento("Egreso");
+		 
+		 TmDao.save(tm1);
+		 TmDao.save(tm2);
 		 //--------------------------------------//
 		 
 

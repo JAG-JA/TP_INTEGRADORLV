@@ -31,6 +31,7 @@ public class TipoMovimientoDaoImpl implements TipoMovimientoDao{
 
 	@Override
 	public TipoMovimiento save(TipoMovimiento tipoMovimiento) {
+	   
 		   Session session = HibernateConf.getSessionFactory().openSession();
 		   session.save(tipoMovimiento); 
 		   session.close();

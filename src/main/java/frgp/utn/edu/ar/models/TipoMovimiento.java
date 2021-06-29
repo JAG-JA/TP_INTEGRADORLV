@@ -14,8 +14,6 @@ public class TipoMovimiento {
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		private int idTipoMovimiento;
 		private String movimiento;
-		private Boolean activo;
-		private String codigo;
 
 		public TipoMovimiento()
 		{
@@ -34,21 +32,6 @@ public class TipoMovimiento {
 			this.movimiento = movimiento;
 		}
 
-		public Boolean getActivo() {
-			return activo;
-		}
-		
-		public void setActivo(Boolean activo) {
-			this.activo = activo;
-		}
-		
-		public String getCodigo() {
-			return codigo;
-		}
-
-		public void setCodigo(String codigo) {
-			this.codigo = codigo;
-		}
 		
 		@Override
 		public String toString() {
@@ -56,6 +39,11 @@ public class TipoMovimiento {
 		}
 		
 		
+		
+		public TipoMovimiento(/*int id,*/String descripcion) {
+			//this.idTipoMovimiento = id;
+			this.movimiento = descripcion;
+		}
 		
 
 }

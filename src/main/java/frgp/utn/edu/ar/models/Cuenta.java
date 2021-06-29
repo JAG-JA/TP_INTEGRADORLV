@@ -31,7 +31,7 @@ public class Cuenta {
 	private Date fechaAlta;
 	private Boolean activo;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="tipoCuenta_c")
+	@JoinColumn(name="idCliente")
 	private TipoCuenta tipoCuenta;
 	
 		

@@ -16,7 +16,8 @@ import frgp.utn.edu.ar.models.Usuario;
 public class GenerarCliente {
 
 	public static Cliente  genearCliente() {
-		 
+		
+		//Genero registros de prueba
 		Cliente sCliente = new Cliente();
 		Rol sRol = new Rol(2, "Cliente");
 	    String nombreApellido [] = 	NombresAleatorios.generarNombresAleatorios(1);
