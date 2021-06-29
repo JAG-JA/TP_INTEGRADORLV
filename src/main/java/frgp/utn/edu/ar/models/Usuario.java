@@ -52,11 +52,11 @@ public class Usuario {
 	{
 		
 	}
-	public Usuario(String usr, String pass)
+	/*public Usuario(String usr, String pass)
 	{
 		 this.userName = usr;
 		 this.password = pass;
-	}
+	}*/
 	public Usuario(String usr, String pass,Rol rol)
 	{
 		 this.userName = usr;

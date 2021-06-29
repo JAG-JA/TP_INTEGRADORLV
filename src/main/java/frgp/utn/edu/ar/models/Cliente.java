@@ -40,7 +40,7 @@ public class Cliente {
 	private Boolean activo;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="cuenta_c")
+	@JoinColumn(name="idcliente")
 	private List<Cuenta> cuentaList = new ArrayList<Cuenta>();
 	
 	public Cliente(){}

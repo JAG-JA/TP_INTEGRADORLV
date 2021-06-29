@@ -79,12 +79,15 @@
 				   <h2> Login</h2>
 				   <p>Ingrese usuario y password</p>
 			   </div>
+			   
+			
 			    <form:form id="Login" action="validar" modelAttribute="usuario">
 				       <div class="form-group">
 			       	        <form:input path="userName" class="form-control"  placeholder="Usuario"/>
 				        </div>
 				        <div class="form-group">
-				             <form:input path="password" class="form-control"  placeholder="Password"/>
+				             <!--<form:input path="password" type="password" class="form-control"  placeholder="Password"/>-->
+				             <form:password path="password" class="form-control" placeholder="Password"/>
 				        </div>
 			            <button type="submit" class="btn btn-primary">Login</button>
 			    </form:form>

@@ -10,7 +10,7 @@ public class Load {
 	public void cargarCliente(int cant){
 
 		for (int i = 0; i < cant; i++) {
-			clienteDao.save(GenerarCliente.genearCliente()) ;     
+			clienteDao.save(GenerarCliente.generarCliente());
 		}
 		
 	

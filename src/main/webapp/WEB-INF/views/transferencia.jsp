@@ -94,7 +94,7 @@ select:focus{ outline: none;}
 			    	</div>
 			    	<div class="col-md-2">
 			    		<button  type="button" class="btn btn-secondary btn-round">
-                               Aceptar
+                               Transferir
                           </button>
 			    	</div>
 				

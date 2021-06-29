@@ -1,7 +1,8 @@
 package frgp.utn.edu.ar.models;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -32,6 +33,14 @@ public class Movimiento {
 	@JoinColumn(name="cuenta_c")
 	private Cuenta cuenta;
 
+	public Cuenta getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(Cuenta cuenta) {
+		this.cuenta = cuenta;
+	}
+
 	public Double getImporte() {
 		return importe;
 	}
@@ -60,8 +69,8 @@ public class Movimiento {
 		return fechaAlta;
 	}
 
-	public void setFechaAlta(Date fechaAlta) {
-		this.fechaAlta = fechaAlta;
+	public void setFechaAlta(java.util.Date date) {
+		this.fechaAlta = date;
 	}
 
 	public String getDetalleMovimiento() {

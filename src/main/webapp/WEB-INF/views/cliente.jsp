@@ -52,7 +52,7 @@ pageEncoding="ISO-8859-1"%>
 				  <div class="card-footer">
 				   <div class="row">
 				        <div class="col-md-6">
-				          <a><span style="color:blue">Transferir</span></a> 
+				          <a href="transferencia/${cuenta.idCuenta}" ><span style="color:blue">Transferir </span></a> 
 				        </div>
 				          <div class="col-md-6">
 				             <a href="historial/${cuenta.id}" ><span style="color:blue">Historial </span></a>
@@ -63,8 +63,7 @@ pageEncoding="ISO-8859-1"%>
 				<br>
 			
 			</c:forEach>
-
-      		  	
+ 		  	
       	   </div>
       	   <div class="col-md-4" >
       	   	  <div class="card" style="margin-top: 12px;margin-bottom: 31px; background: #53b6b8;">
