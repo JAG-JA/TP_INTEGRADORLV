@@ -34,6 +34,7 @@ public class TipoMovimientoDaoImpl implements TipoMovimientoDao{
 
 	@Override
 	public TipoMovimiento save(TipoMovimiento tipoMovimiento) {
+	   
 		   Session session = HibernateConf.getSessionFactory().openSession();
 		   session.save(tipoMovimiento); 
 		   session.close();
@@ -61,5 +62,8 @@ public class TipoMovimientoDaoImpl implements TipoMovimientoDao{
 	    List<?>  sList =  query.getResultList();
 	    return    sList.size() > 0 ? (TipoMovimiento) sList.get(0)  : null;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 831e5310b44e6fae40fa5da336556c48982f7171
 }
