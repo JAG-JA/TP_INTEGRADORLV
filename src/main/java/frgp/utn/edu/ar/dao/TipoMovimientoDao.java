@@ -5,4 +5,6 @@ import frgp.utn.edu.ar.models.TipoMovimiento;
 
 public interface TipoMovimientoDao extends Crud<TipoMovimiento>{
 
+	TipoMovimiento findTipoMovimientoById(int idTipoMovimiento);
+	
 }

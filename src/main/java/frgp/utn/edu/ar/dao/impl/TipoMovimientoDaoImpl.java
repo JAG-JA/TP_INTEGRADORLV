@@ -3,6 +3,7 @@ package frgp.utn.edu.ar.dao.impl;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
 
 import frgp.utn.edu.ar.dao.TipoMovimientoDao;
@@ -11,6 +12,8 @@ import frgp.utn.edu.ar.models.TipoMovimiento;
 @Repository
 public class TipoMovimientoDaoImpl implements TipoMovimientoDao{
 
+	Session session =  HibernateConf.getSessionFactory().openSession();
+	
 	@Override
 	public TipoMovimiento findByName(String name) {
 		// TODO Auto-generated method stub
@@ -50,4 +53,13 @@ public class TipoMovimientoDaoImpl implements TipoMovimientoDao{
 		
 	}
 
+	@SuppressWarnings("deprecation")
+	@Override
+	public TipoMovimiento findTipoMovimientoById(int idTipoMovimiento) {
+		NativeQuery  query = session.createSQLQuery("SELECT * FROM TIPOMOVIMIENTO WHERE IDTIPOMOVIMIENTO = :ID");
+		query.addEntity(TipoMovimiento.class);
+		query.setParameter("ID", idTipoMovimiento);
+	    List<?>  sList =  query.getResultList();
+	    return    sList.size() > 0 ? (TipoMovimiento) sList.get(0)  : null;
+	}
 }
