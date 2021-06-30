@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,8 +18,8 @@ import frgp.utn.edu.ar.models.Cliente;
 import frgp.utn.edu.ar.models.Localidad;
 import frgp.utn.edu.ar.service.ClienteService;
 
-
 @Controller
+@ControllerAdvice
 public class RegistrarController {
 
 	@Autowired
@@ -27,7 +28,7 @@ public class RegistrarController {
 	@Autowired
 	private ClienteService clienteService;
     
-	@RequestMapping(value="/registar")
+	@RequestMapping(value="/registrar")
 	public String viewFormReg(Model model) {
     	Cliente cliente = new Cliente();
     	List<Localidad> sListLocalidad = localidadService.findAll();

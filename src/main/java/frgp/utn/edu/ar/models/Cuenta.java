@@ -6,13 +6,18 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity
@@ -31,21 +36,35 @@ public class Cuenta {
 	private Date fechaAlta;
 	private Boolean activo;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="idCliente")
+	@JoinColumn(name="idTipoCuenta")
 	private TipoCuenta tipoCuenta;
 	
-		
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name = "idCliente",nullable=false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Cliente cliente;
+	
+	
+	
+	public int getIdCuenta() {
+		return idCuenta;
+	}
+	public void setIdCuenta(int idCuenta) {
+		this.idCuenta = idCuenta;
+	}
+
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
 	public Cuenta() {
 		// TODO Auto-generated constructor stub
 	}
-	public int getId() {
-		return idCuenta;
-	}
-
-	public void setId(int id) {
-		idCuenta = id;
-	}
-
+	
 	public String getCodigo() {
 		return codigo;
 	}

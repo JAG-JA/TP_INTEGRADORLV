@@ -22,14 +22,14 @@
       		 <div class="card" style="background-color: #ecf7ef">
       		 		<div class="card-body">
       		 		 <div class="row">
-      		 		    <div class="col-md-4">
-      		 		    	<span><b>Caja de ahorro $</b> 121212121200</span>
-      		 		     </div>
-      		 		     <div class="col-md-4" > 
-      		 		         <img alt="Historial" src="images/historial.png" width="80%">
-      		 		     </div>
-      		 		     <div class="col-md-4" > 
-      		 		        <span><b>Saldo disponible $</b>1000 </span>
+      		 		   <div class="col-md-4">
+          		 		    	<span><b>Caja de ahorro $</b> ${cuenta.nroCuenta}</span>
+          		 		     </div>
+          		 		     <div class="col-md-4" > 
+          		 		         <img alt="Historial" src="images/historial.png" width="80%">
+          		 		     </div>
+          		 		     <div class="col-md-4" > 
+          		 		        <span><b>Saldo disponible $</b> ${cuenta.saldo} </span>
       		 		    </div>
       		 		 </div>
       		 		
@@ -47,13 +47,13 @@
 					    </tr>
 					  </thead>
 					  <tbody>
-					  <c:forEach var="mov" items="${movimiento}">
-						    <tr>
-						      <th scope="row">${mov.fechaAlta}</th>
-						      <td>${mov.detalleMovimiento}</td>
-						      <td>${mov.importe}</td>
-						     
-						    </tr>
+				 <c:forEach var="mov" items="${movimiento}">
+    						    <tr>
+    						      <th scope="row">${mov.fechaAlta}</th>
+    						      <td>${mov.detalleMovimiento}</td>
+    						      <td>${mov.importe}</td>
+    						     
+    						    </tr>
 					  </c:forEach>
 					  </tbody>
 					</table>

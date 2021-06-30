@@ -27,7 +27,6 @@ public class TipoCuenta {
 	}
 
 
-	
 	public TipoCuenta()
 	{
 		
@@ -57,5 +56,12 @@ public class TipoCuenta {
 		this.activo = activo;
 	}
 
+	public TipoCuenta(int idTipoCuenta,String tipoCuenta,String codigo) {
+		this.idTipoCuenta = idTipoCuenta;
+		this.tipoCuenta = tipoCuenta;
+		this.codigo = codigo;
+		this.activo = true;
+		
+	}
 
 }

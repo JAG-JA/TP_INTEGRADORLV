@@ -13,8 +13,7 @@ public class Load {
 			clienteDao.save(GenerarCliente.generarCliente());
 		}
 		
-	
-		
+		clienteDao.save(GenerarCliente.generarAdministrador());
 		
 	}
 }

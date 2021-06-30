@@ -65,5 +65,12 @@ public class ClienteServiceImpl  implements ClienteService{
 		// TODO Auto-generated method stub
 		return clienteDao.findClienteByUsuario(idUsuario);
 	}
+	
+	@Override
+	public void updateCliente(Cliente cliente) {
+		cliente.setActivo(false);
+		clienteDao.updateCliente(cliente);
+		
+	}
 
 }

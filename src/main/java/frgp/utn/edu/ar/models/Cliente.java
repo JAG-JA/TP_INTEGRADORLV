@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,8 +40,7 @@ public class Cliente {
 	private Usuario usuario;
 	private Boolean activo;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="idcliente")
+	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "cliente")
 	private List<Cuenta> cuentaList = new ArrayList<Cuenta>();
 	
 	public Cliente(){}

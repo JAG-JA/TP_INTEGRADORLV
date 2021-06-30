@@ -42,6 +42,7 @@ public class LoginController {
 	   Usuario usuario = new Usuario();
 	   model.addAttribute("usuario", usuario);
 	   return "login";
+	   //return "transferencia";
 	}
     
    @RequestMapping(value="/validar", method = RequestMethod.POST)

@@ -25,7 +25,6 @@ pageEncoding="ISO-8859-1"%>
      	 	<span style="color: white; ">
      	 		¡Actualizá tus datos!
 				 Mantener tus datos actualizados te permite identificarte de manera simple y operar de forma más segura.
-     	 	  ${msg}
      	 	</span>
      	 </div>
      	  <div class="col-md-2">

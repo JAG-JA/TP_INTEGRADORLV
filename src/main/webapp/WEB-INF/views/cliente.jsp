@@ -35,7 +35,7 @@ pageEncoding="ISO-8859-1"%>
       <div class="row">
            <div class="col-md-8">
       		<h4><span>Bienvenido ${cliente.apellido} ${cliente.nombre}</span></h4>
-      		
+      		${msg}
       		<c:forEach var="cuenta" items="${sListCuenta}">
 		
 				  <div class="card" style="margin-bottom: 31px;">
@@ -52,10 +52,10 @@ pageEncoding="ISO-8859-1"%>
 				  <div class="card-footer">
 				   <div class="row">
 				        <div class="col-md-6">
-				          <a href="transferencia/${cuenta.idCuenta}" ><span style="color:blue">Transferir </span></a> 
+				          <a href="transferencia/${cuenta.idCuenta}" ><span style="color:blue">Transferir </span></a>
 				        </div>
 				          <div class="col-md-6">
-				             <a href="historial/${cuenta.id}" ><span style="color:blue">Historial </span></a>
+				            <a href="historial/${cuenta.idCuenta}" ><span style="color:blue">Historial </span></a>
 				        </div>
 				     </div>
 				  </div>

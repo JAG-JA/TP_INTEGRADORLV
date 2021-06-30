@@ -80,8 +80,7 @@
 				   <p>Ingrese usuario y password</p>
 			   </div>
 			   
-			
-			    <form:form id="Login" action="validar" modelAttribute="usuario">
+				<form:form id="Login" action="validar" modelAttribute="usuario">
 				       <div class="form-group">
 			       	        <form:input path="userName" class="form-control"  placeholder="Usuario"/>
 				        </div>

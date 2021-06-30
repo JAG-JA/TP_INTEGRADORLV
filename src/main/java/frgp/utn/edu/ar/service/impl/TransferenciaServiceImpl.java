@@ -60,7 +60,7 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 		
 		//2 egreso		
 		tipoMovimientoOrig = tipoMovimientoDao.findTipoMovimientoById(2);
-		cuentaOrig = cuentaDao.findById((long) transferencia.getMovimientoOrigen().getCuenta().getId());
+		cuentaOrig = cuentaDao.findById((long) transferencia.getMovimientoOrigen().getCuenta().getIdCuenta());
 		
 		movimientoOrigen.setDetalleMovimiento("Movimiento de tipo transferencia a cuenta origen");
 		movimientoOrigen.setImporte(transferencia.getMovimientoDestino().getImporte()*-1);
@@ -70,7 +70,7 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 		
 		//1 ingreso
 		tipoMovimientoDest = tipoMovimientoDao.findTipoMovimientoById(1);		
-		cuentaDest = cuentaDao.findById((long) transferencia.getMovimientoDestino().getCuenta().getId());
+		cuentaDest = cuentaDao.findById((long) transferencia.getMovimientoDestino().getCuenta().getIdCuenta());
 
 		movimientoDestino.setDetalleMovimiento("Movimiento de tipo transferencia a cuenta destino");
 		movimientoDestino.setImporte(transferencia.getMovimientoDestino().getImporte());

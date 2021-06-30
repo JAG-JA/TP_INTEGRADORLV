@@ -5,6 +5,8 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.query.NativeQuery;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import frgp.utn.edu.ar.config.HibernateConf;
 import frgp.utn.edu.ar.dao.ClienteDao;
 import frgp.utn.edu.ar.models.Cliente;
@@ -72,5 +74,14 @@ public class ClienteDaoImpl  implements ClienteDao{
 		
 	}
 
+	@Transactional
+	@Override
+	public void updateCliente(Cliente cliente) {
+		NativeQuery  query = session.createSQLQuery("update cliente set activo = 1  where id = :ID");
+		query.addEntity(Cliente.class);
+		query.setParameter("ID", cliente.getIdCliente());
+		int id = query.executeUpdate();
+		System.out.println("el id " + id);
+	}
 
 }

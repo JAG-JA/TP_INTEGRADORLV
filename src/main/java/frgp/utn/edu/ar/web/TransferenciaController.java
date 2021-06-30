@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import frgp.utn.edu.ar.service.CuentaService;
 import frgp.utn.edu.ar.service.TransferenciaService;
 
 @Controller
+@ControllerAdvice
 public class TransferenciaController {	
 	
 	@Autowired 
@@ -24,7 +26,7 @@ public class TransferenciaController {
 	@Autowired 
 	private TransferenciaService transferenciaService;
 	
-	@RequestMapping("/transfencia/{idcuenta}")
+	@RequestMapping("/transferencia/{idcuenta}")
 	public String viewTransferenciaForm(@PathVariable String idCuenta, Model model) {
 		System.out.println("Id cuenta origen es " + idCuenta);
 		Cuenta sCuentaOrigen = cuentaService.findById(Long.parseLong(idCuenta));
