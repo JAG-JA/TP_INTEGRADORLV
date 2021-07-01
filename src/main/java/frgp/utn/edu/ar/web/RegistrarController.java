@@ -47,6 +47,8 @@ public class RegistrarController {
    @RequestMapping("/save") 
    public String save(@ModelAttribute("cliente") Cliente cliente, BindingResult result ,Model model) {
 	   
+	   //si el cliente tiene ID tengo que actualizar y sino que siga creando.
+	   
 	   System.out.println(cliente.getNombre());
 	   Cliente sCliente = clienteService.save(cliente);
 	   model.addAttribute("cliente", sCliente);

@@ -27,7 +27,7 @@ public class Cliente {
 	private int idCliente;
 	private String nombre;
 	private String apellido;
-	private int dni;
+	private long dni;
 	private String sexo;
 	private String nacionalidad;
 	private Date fechaNacimiento;
@@ -65,11 +65,11 @@ public class Cliente {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public int getDni() {
+	public long getDni() {
 		return dni;
 	}
-	public void setDni(int dni) {
-		this.dni = dni;
+	public void setDni(long l) {
+		this.dni = l;
 	}
 	public String getSexo() {
 		return sexo;

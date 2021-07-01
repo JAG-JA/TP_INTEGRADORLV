@@ -61,7 +61,7 @@ pageEncoding="ISO-8859-1"%>
                       	 <a  href="viewDelete/${cli.idCliente}" class="btn btn-secondary">
                       			 <i class="fa fa-trash"></i>
                       	 </a>
-                      	  <a href="update/"${cli.idCliente}  class="btn btn-secondary">
+                      	  <a href="update/${cli.idCliente}"  class="btn btn-secondary">
                       	    <i class="fa fa-user"></i>
                       	 </a>
                       	  <a  href="registar" class="btn btn-secondary">

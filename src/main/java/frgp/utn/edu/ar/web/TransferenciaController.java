@@ -10,37 +10,46 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import frgp.utn.edu.ar.dto.TransferenciaDto;
 import frgp.utn.edu.ar.models.Cuenta;
 import frgp.utn.edu.ar.models.Transferencia;
 import frgp.utn.edu.ar.service.CuentaService;
 import frgp.utn.edu.ar.service.TransferenciaService;
 
 @Controller
-@ControllerAdvice
-public class TransferenciaController {	
+public class TransferenciaController {
+ 
+	@Autowired
+	private CuentaService cuentaSevice;
 	
-	@Autowired 
-	private CuentaService cuentaService;
+	@Autowired
+	private TransferenciaService  trasnferencia;
 
-	@Autowired 
-	private TransferenciaService transferenciaService;
-	
-	@RequestMapping("/transferencia/{idcuenta}")
-	public String viewTransferenciaForm(@PathVariable String idCuenta, Model model) {
-		System.out.println("Id cuenta origen es " + idCuenta);
-		Cuenta sCuentaOrigen = cuentaService.findById(Long.parseLong(idCuenta));
-		model.addAttribute("cuentaOrigen", sCuentaOrigen);
-		return "transferencia";
-	}
-	
-	@RequestMapping("/generarTrx")
-	public String generarTransferencia(@ModelAttribute("transferencia") Transferencia transferencia,BindingResult result, Model model) {
+	@RequestMapping("/transferencia/{idCuenta}")
+	public String viewFormTransferencia(@PathVariable("idCuenta") String idCuenta, Model model) {
 		
-		Transferencia sTransferencia = transferenciaService.save(transferencia);
-		
-		return "transferencia_exitosa";
+		Cuenta sCuenta = new Cuenta();
+		sCuenta =  cuentaSevice.findById(Long.parseLong(idCuenta));
+		model.addAttribute("cuentaOrigen", sCuenta);
+		TransferenciaDto transferenciaDto  =  new TransferenciaDto();
+		transferenciaDto.setCuentaOrigen(sCuenta.getNroCuenta());
+		model.addAttribute("transferenciaDto",transferenciaDto);
+		return  "transferencia";
 		
 	}
+	 @RequestMapping(value="transferencia/transferenciapost", method = RequestMethod.POST)
+	 public String save(@ModelAttribute("transferenciaDto") TransferenciaDto transferenciaDto, BindingResult result, Model model) {
+		 trasnferencia.save(transferenciaDto);
+		 return "success";
+	}
+	
+	 @ModelAttribute
+	 public void addAttributes(Model model) {
+		 Transferencia transferencia = new Transferencia();
+		 model.addAttribute("transferencia", transferencia);
+		 
+	 }
 	
 }

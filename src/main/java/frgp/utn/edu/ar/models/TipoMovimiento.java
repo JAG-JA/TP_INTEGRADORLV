@@ -39,9 +39,12 @@ public class TipoMovimiento {
 		}
 		
 		
+		public TipoMovimiento(String descripcion) {
+			this.movimiento = descripcion;
+		}		
 		
-		public TipoMovimiento(/*int id,*/String descripcion) {
-			//this.idTipoMovimiento = id;
+		public TipoMovimiento(int id,String descripcion) {
+			this.idTipoMovimiento = id;
 			this.movimiento = descripcion;
 		}
 		

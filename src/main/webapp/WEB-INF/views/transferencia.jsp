@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<title>Transferencia</title>
+<title>Banco online</title>
 <style type="text/css">
 .caja {
    margin-left: 16px;
@@ -56,32 +60,55 @@ select:focus{ outline: none;}
 			  <div class="card-body">
 			     <div class="row">
 			        <div class="col-md-6">
-			           <span><b>Caja de Ahorro$</b> 000000001 </span>
+			           <span><b>Caja de Ahorro$</b> ${cuentaOrigen.nroCuenta} </span>
 			        </div>
 			          <div class="col-md-6">
-			           <span><b>Saldo$</b> 000000001 </span>
+			           <span><b>Saldo$</b>  ${cuentaOrigen.saldo} </span>
+			        </div>
+			     </div>
+			  </div>
+			  <div class="card-footer">
+			   <div class="row">
+			        <div class="col-md-6">
+			       
+			        </div>
+			          <div class="col-md-6">
+			         
 			        </div>
 			     </div>
 			  </div>
 			</div>
 			<div class="card">
 			  <div class="card-body">
-			    <div class="row">
-			    	<div class="col-md-3">
-			    			<input type="text" class="form-control" placeholder="Nro Cuenta" style="disabled" name="nroCuenta" required>
-			    	</div>
-			    	<div class="col-md-2">
-			    		<input type="text" class="form-control" placeholder="Importe" style="disabled" name="importe" required>
-			    	</div>
-			    	<div class="col-md-2">
-			            <button type="generarTrx" class="btn btn-secondary btn-round">Transferir</button>
-			    	</div>
-				
-					
-			    </div>
+			    
+			        <form:form id="transferenciaDto" action="./transferenciapost" modelAttribute="transferenciaDto" method="POST">
+				    <div class="row">
+				    	<div class="col-md-4">
+				    			<div class="col-md-2"></div>
+								   <form:input path="cuentaOrigen" class="form-control" ></form:input>
+				    			</div>
+						    	<div class="col-md-3">
+						    	    <form:input path="cuentaDestino" class="form-control" placeholder="Cuenta Destino"></form:input>
+						    	</div>
+						    	<div class="col-md-3">
+						    		   <form:input path="detalle" class="form-control" placeholder="Detalle"></form:input>
+						    	</div>
+						    	<div class="col-md-2">
+						    		   <form:input path="importe" class="form-control" placeholder="Importe"></form:input>
+						    	</div>
+						    	<div class="col-md-2 mt-3">
+						    		<button  type="submit" class="btn btn-secondary btn-round " style="">
+			                               Aceptar
+			                         </button>
+						    	</div>
+				    	</div>
+			    </form:form>
 			  </div>
 			</div>
 			
+
+			
+      		  	
       	   </div>
       	   <div class="col-md-4" >
       	   	  <div class="card" style="margin-top: 12px;margin-bottom: 31px; background: #53b6b8;">
