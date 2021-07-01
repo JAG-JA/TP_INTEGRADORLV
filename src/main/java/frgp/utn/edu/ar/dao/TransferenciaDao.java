@@ -5,4 +5,6 @@ import frgp.utn.edu.ar.models.Transferencia;
 
 public interface TransferenciaDao extends Crud<Transferencia> {
 
+	Integer saveT(Transferencia sTransferencia);
+	void update(Integer idTansferencia, Integer idMovimientoOrigen , Integer idMovimientoDestino);
 }

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import frgp.utn.edu.ar.dao.CuentaDao;
 import frgp.utn.edu.ar.dao.TipoMovimientoDao;
 import frgp.utn.edu.ar.dao.TransferenciaDao;
-import frgp.utn.edu.ar.dto.TransferenciaDto;
 import frgp.utn.edu.ar.models.Cuenta;
 import frgp.utn.edu.ar.models.Movimiento;
 import frgp.utn.edu.ar.models.TipoMovimiento;
@@ -46,69 +45,42 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 		return null;
 	}
 
-//	@Override
-//	public Transferencia save(Transferencia transferencia) {
-//		//actualizar fecha,guardar trx, guardar movimientos, generar 2 movimientos
-//		transferencia.setFecha(new Date());
-//		transferencia.setNroTransferencia(9999); //Ver
-//		
-//		Movimiento movimientoOrigen = new Movimiento();
-//		Movimiento movimientoDestino = new Movimiento();
-//		TipoMovimiento tipoMovimientoOrig = new TipoMovimiento();
-//		TipoMovimiento tipoMovimientoDest = new TipoMovimiento();
-//		Cuenta cuentaOrig = new Cuenta();
-//		Cuenta cuentaDest = new Cuenta();
-//		
-//		//2 egreso		
-//		tipoMovimientoOrig = tipoMovimientoDao.findTipoMovimientoById(2);
-//		cuentaOrig = cuentaDao.findById((long) transferencia.getMovimientoOrigen().getCuenta().getIdCuenta());
-//		
-//		movimientoOrigen.setDetalleMovimiento("Movimiento de tipo transferencia a cuenta origen");
-//		movimientoOrigen.setImporte(transferencia.getMovimientoDestino().getImporte()*-1);
-//		movimientoOrigen.setFechaAlta(transferencia.getFecha());
-//		movimientoOrigen.setTipoMovimiento(tipoMovimientoOrig);
-//		movimientoOrigen.setCuenta(cuentaOrig);
-//		
-//		//1 ingreso
-//		tipoMovimientoDest = tipoMovimientoDao.findTipoMovimientoById(1);		
-//		cuentaDest = cuentaDao.findById((long) transferencia.getMovimientoDestino().getCuenta().getIdCuenta());
-//
-//		movimientoDestino.setDetalleMovimiento("Movimiento de tipo transferencia a cuenta destino");
-//		movimientoDestino.setImporte(transferencia.getMovimientoDestino().getImporte());
-//		movimientoDestino.setFechaAlta(transferencia.getFecha());
-//		movimientoDestino.setTipoMovimiento(tipoMovimientoDest);
-//		movimientoDestino.setCuenta(cuentaDest);
-//				
-//		return transferenciaDao.save(transferencia);
-//	}
+	@Override
+	public Transferencia save(Transferencia transferencia) {
+		//actualizar fecha,guardar trx, guardar movimientos, generar 2 movimientos
+		transferencia.setFecha(new Date());
+		transferencia.setNroTransferencia(9999); //Ver
+		
+		Movimiento movimientoOrigen = new Movimiento();
+		Movimiento movimientoDestino = new Movimiento();
+		TipoMovimiento tipoMovimientoOrig = new TipoMovimiento();
+		TipoMovimiento tipoMovimientoDest = new TipoMovimiento();
+		Cuenta cuentaOrig = new Cuenta();
+		Cuenta cuentaDest = new Cuenta();
+		
+		//2 egreso		
+		tipoMovimientoOrig = tipoMovimientoDao.findTipoMovimientoById(2);
+		cuentaOrig = cuentaDao.findById((long) transferencia.getMovimientoOrigen().getCuenta().getIdCuenta());
+		
+		movimientoOrigen.setDetalleMovimiento("Movimiento de tipo transferencia a cuenta origen");
+		movimientoOrigen.setImporte(transferencia.getMovimientoDestino().getImporte()*-1);
+		movimientoOrigen.setFechaAlta(transferencia.getFecha());
+		movimientoOrigen.setTipoMovimiento(tipoMovimientoOrig);
+		movimientoOrigen.setCuenta(cuentaOrig);
+		
+		//1 ingreso
+		tipoMovimientoDest = tipoMovimientoDao.findTipoMovimientoById(1);		
+		cuentaDest = cuentaDao.findById((long) transferencia.getMovimientoDestino().getCuenta().getIdCuenta());
 
-		@Override
-		public void save(TransferenciaDto dto) {
-		   Transferencia sTranferencia = new Transferencia();
-		   sTranferencia.setDetalle(dto.getDetalle());
-		   sTranferencia.setFecha(new Date() );
+		movimientoDestino.setDetalleMovimiento("Movimiento de tipo transferencia a cuenta destino");
+		movimientoDestino.setImporte(transferencia.getMovimientoDestino().getImporte());
+		movimientoDestino.setFechaAlta(transferencia.getFecha());
+		movimientoDestino.setTipoMovimiento(tipoMovimientoDest);
+		movimientoDestino.setCuenta(cuentaDest);
+				
+		return transferenciaDao.save(transferencia);
+	}
 
-		   Movimiento sMDestino = new Movimiento();
-		   sMDestino.setFechaAlta(new Date());
-		   sMDestino.setIdMovimiento(1);
-		   sMDestino.setCuenta(cuentaDao.findByName(dto.getCuentaDestino()));
-		   sMDestino.setImporte(Double.parseDouble(dto.getImporte()));
-		   
-		   Movimiento sMOrigen = new Movimiento();
-		   sMOrigen.setFechaAlta(new Date());
-		   sMOrigen.setIdMovimiento(1);
-		   sMOrigen.setCuenta(cuentaDao.findByName(dto.getCuentaOrigen()));
-		   sMOrigen.setImporte(Double.parseDouble(dto.getImporte()));
-		   
-		   
-		   sTranferencia.setMovimientoDestino(sMDestino);
-		   sTranferencia.setMovimientoOrigen(sMOrigen);
-		   
-		   transferenciaDao.save(sTranferencia);
-		   
-
-		}
-	
 	@Override
 	public void delete(Transferencia object) {
 		// TODO Auto-generated method stub
@@ -119,12 +91,6 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public Transferencia save(Transferencia object) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
