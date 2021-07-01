@@ -25,7 +25,7 @@ public class TransferenciaController {
 	private CuentaService cuentaSevice;
 	
 	@Autowired
-	private TransferenciaService  trasnferencia;
+	private TransferenciaService  transferencia;
 
 	@RequestMapping("/transferencia/{idCuenta}")
 	public String viewFormTransferencia(@PathVariable("idCuenta") String idCuenta, Model model) {
@@ -39,10 +39,13 @@ public class TransferenciaController {
 		return  "transferencia";
 		
 	}
+	
 	 @RequestMapping(value="transferencia/transferenciapost", method = RequestMethod.POST)
 	 public String save(@ModelAttribute("transferenciaDto") TransferenciaDto transferenciaDto, BindingResult result, Model model) {
-		 trasnferencia.save(transferenciaDto);
-		 return "success";
+		 // si el monto es mayor return una jsp de error con un boton volver 
+		 // return "errorTans";
+		 transferencia.save(transferenciaDto);
+		 return "successTrans";
 	}
 	
 	 @ModelAttribute

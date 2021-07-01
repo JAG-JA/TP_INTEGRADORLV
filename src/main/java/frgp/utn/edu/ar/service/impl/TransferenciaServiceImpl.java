@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import frgp.utn.edu.ar.dao.CuentaDao;
 import frgp.utn.edu.ar.dao.TipoMovimientoDao;
+import frgp.utn.edu.ar.dao.MovimientoDao;
 import frgp.utn.edu.ar.dao.TransferenciaDao;
 import frgp.utn.edu.ar.dto.TransferenciaDto;
 import frgp.utn.edu.ar.models.Cuenta;
@@ -27,6 +28,9 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	
 	@Autowired
 	private CuentaDao cuentaDao;
+	
+	@Autowired
+	private MovimientoDao movimientoDao;
 	
 	@Override
 	public Transferencia findByName(String name) {
@@ -82,30 +86,48 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 //		return transferenciaDao.save(transferencia);
 //	}
 
-		@Override
-		public void save(TransferenciaDto dto) {
-		   Transferencia sTranferencia = new Transferencia();
-		   sTranferencia.setDetalle(dto.getDetalle());
-		   sTranferencia.setFecha(new Date() );
+	@Override
+	public void save(TransferenciaDto dto) {
+	   Transferencia sTranferencia = new Transferencia();
+	   sTranferencia.setDetalle(dto.getDetalle());
+	   sTranferencia.setFecha(new Date() );
 
-		   Movimiento sMDestino = new Movimiento();
-		   sMDestino.setFechaAlta(new Date());
-		   sMDestino.setIdMovimiento(1);
-		   sMDestino.setCuenta(cuentaDao.findByName(dto.getCuentaDestino()));
-		   sMDestino.setImporte(Double.parseDouble(dto.getImporte()));
-		   
-		   Movimiento sMOrigen = new Movimiento();
-		   sMOrigen.setFechaAlta(new Date());
-		   sMOrigen.setIdMovimiento(1);
-		   sMOrigen.setCuenta(cuentaDao.findByName(dto.getCuentaOrigen()));
-		   sMOrigen.setImporte(Double.parseDouble(dto.getImporte()));
-		   
-		   
-		   sTranferencia.setMovimientoDestino(sMDestino);
-		   sTranferencia.setMovimientoOrigen(sMOrigen);
-		   
-		   transferenciaDao.save(sTranferencia);
-		   
+	   Movimiento sMDestino = new Movimiento();
+	   sMDestino.setFechaAlta(new Date());
+	   sMDestino.setIdMovimiento(1);
+	   sMDestino.setCuenta(cuentaDao.findByName(dto.getCuentaDestino()));
+	   sMDestino.setImporte(Double.parseDouble(dto.getImporte()));
+	   
+//	   Movimiento sMOrigen = new Movimiento();
+//	   sMOrigen.setFechaAlta(new Date());
+//	   sMOrigen.setIdMovimiento(1);
+//	   sMOrigen.setCuenta(cuentaDao.findByName(dto.getCuentaOrigen()));
+//	
+//	   sMOrigen.setImporte(Double.parseDouble(dto.getImporte()));
+	   
+	   
+	  // sTranferencia.setMovimientoDestino(sMDestino);
+	  // sTranferencia.setMovimientoOrigen(sMOrigen);
+	   
+	   //se recupera el id para luego actulizar la transferencia con el id del segundo momvimieto
+	  Integer idTransferencia = transferenciaDao.saveT(sTranferencia);
+	  // guardar el segundo movimiento
+	   
+	  
+	   Movimiento sMOrigen = new Movimiento();
+	   sMOrigen.setFechaAlta(new Date());
+	   sMOrigen.setIdMovimiento(1);
+	   sMOrigen.setCuenta(cuentaDao.findByName(dto.getCuentaOrigen()));
+	   sMOrigen.setImporte(Double.parseDouble(dto.getImporte())*-1);
+	   
+	   Integer idMovimeintoOrigen = movimientoDao.saveM(sMOrigen);
+	   Integer idMovimeintoDestino= movimientoDao.saveM(sMDestino);
+	   transferenciaDao.update(idTransferencia, idMovimeintoOrigen,idMovimeintoDestino);
+	   
+	   // up de la cuenta restando el saldo.
+	   // la validacion del monto
+	   // sMOrigen.setIdMovimiento(1);  agregar el verdadero tipo de moviento.
+	   
 
 		}
 	

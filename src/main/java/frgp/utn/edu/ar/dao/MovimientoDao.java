@@ -5,5 +5,6 @@ import frgp.utn.edu.ar.models.Movimiento;
 
 public interface MovimientoDao extends Crud<Movimiento> {
 
+	 Integer saveM(Movimiento sMovimiento);
 }
 

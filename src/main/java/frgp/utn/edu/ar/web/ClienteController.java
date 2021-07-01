@@ -35,6 +35,8 @@ public class ClienteController {
 	  return "borrarCliente";
 		
 	}
+	
+
 	@RequestMapping("viewDelete/delete/{id}")
 	public String delete(@PathVariable String id, Model model ) {
 		Cliente sCliente  = clienteService.findById(Long.parseLong(id));

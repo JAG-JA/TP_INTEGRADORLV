@@ -49,4 +49,23 @@ public class MovimientoDaoImpl implements MovimientoDao{
 		
 	}
 
+	@Override
+	public Integer saveM(Movimiento sMovimiento) {
+		Integer id = 0;
+		try {
+			Session session = HibernateConf.getSessionFactory().openSession();
+			if(session.isOpen()) {
+				session.getTransaction().begin();
+				id = (Integer) session.save(sMovimiento); 
+				session.getTransaction().commit();
+				
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return id;
+	}
+
 }

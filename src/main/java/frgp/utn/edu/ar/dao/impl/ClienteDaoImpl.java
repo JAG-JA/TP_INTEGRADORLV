@@ -17,6 +17,9 @@ public class ClienteDaoImpl  implements ClienteDao{
    
 	Session session =  HibernateConf.getSessionFactory().openSession();
 
+	
+	
+	@SuppressWarnings("deprecation")
 	@Override
 	public Cliente findByName(String name) {	
 	    
@@ -53,12 +56,12 @@ public class ClienteDaoImpl  implements ClienteDao{
 		session.delete(object);
 		
 	}
-
+	
+	
+	
 	@Override
 	public void deleteById(Long id) {
-		NativeQuery  query = session.createSQLQuery("UPDATE CLIENTE SET ACTIVO = 0 WHERE  ID = :ID");
-		query.addEntity(Cliente.class);
-		query.executeUpdate();
+	 
 		
 	}
 
@@ -74,14 +77,15 @@ public class ClienteDaoImpl  implements ClienteDao{
 		
 	}
 
-	@Transactional
 	@Override
 	public void updateCliente(Cliente cliente) {
-		NativeQuery  query = session.createSQLQuery("update cliente set activo = 1  where id = :ID");
+		session.getTransaction().begin();
+		NativeQuery  query = session.createSQLQuery("update cliente set activo = 1  where idcliente = :ID");
 		query.addEntity(Cliente.class);
 		query.setParameter("ID", cliente.getIdCliente());
 		int id = query.executeUpdate();
 		System.out.println("el id " + id);
+		session.getTransaction().commit();
+		
 	}
-
 }
