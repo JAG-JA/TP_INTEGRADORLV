@@ -59,9 +59,16 @@ public class ClienteController {
 	    sListSex.add("Masculino");
 	    sListSex.add("Femenino");
 	    sListSex.add("!Binario");
+	    
+	    List<String> sListNacionalidad = new ArrayList<String>();
+	    sListNacionalidad.add("Argentina");
+	    sListNacionalidad.add("Congoleña");
+	    sListNacionalidad.add("Paraguaya");
+	    
+	    
 	    model.addAttribute("sComboLocalidades",sListLocalidad);
 	    model.addAttribute("sListSex",sListSex);
-	  
+	    model.addAttribute("sListSex",sListNacionalidad);
 	    return "registrar";  
 	}
 	 

@@ -145,9 +145,10 @@
 			    		</div>
 			    		<div class="col-md-6">
 			    			<div class="form-group">
-			        			<!--<form:select path="localidad.localidad" class="form-control" items="${sComboLocalidades}"  style="height: 47px;"> </form:select>-->
-							</div>
-			    		</div>
+				        			<form:select path="nacionalidad" class="form-control" items="${sListNacionalidad}" style="height: 47px;"> </form:select>	
+								</div>
+				    		</div>				    								
+			    		</div>	
 				    </div>  	    
 			            <button type="submit" class="btn btn-primary">Aceptar</button>
 			    </form:form>

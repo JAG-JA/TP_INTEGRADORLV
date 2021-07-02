@@ -32,13 +32,22 @@ public class RegistrarController {
 	public String viewFormReg(Model model) {
     	Cliente cliente = new Cliente();
     	List<Localidad> sListLocalidad = localidadService.findAll();
-        List<String> sListSex = new ArrayList<String>();
+       
+    	List<String> sListSex = new ArrayList<String>();
         sListSex.add("Masculino");
         sListSex.add("Femenino");
         sListSex.add("!Binario");
+        
+        List<String> sListNacionalidad = new ArrayList<String>();
+        sListNacionalidad.add("Argentino");
+        sListNacionalidad.add("Congoleña");
+        sListNacionalidad.add("Paraguaya");
+        
+        
    	    model.addAttribute("cliente", cliente);
    	    model.addAttribute("sComboLocalidades",sListLocalidad);
    	    model.addAttribute("sListSex",sListSex);
+   	    model.addAttribute("sListNacionalidad",sListNacionalidad);
    	    
 		return "registrar";
 	}

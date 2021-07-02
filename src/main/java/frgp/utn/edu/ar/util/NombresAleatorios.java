@@ -62,6 +62,8 @@ public class NombresAleatorios {
 		return nombresAleatorios;
 	}
 
+	
+
 	public static String[] generarDNIAleatorios(int cantidad) {
 		String[] dniAleatorios = new String[cantidad];
 
@@ -73,6 +75,22 @@ public class NombresAleatorios {
 		}
 		return dniAleatorios;
 	}
+
+
+	public static String[] generarGentiliciosAleatorios(int cantidad) {
+		String[] nombresAleatorios = new String[cantidad];
+
+		String[] paises = { "Argentina","Congoleña"};
+		
+
+		for (int i = 0; i < cantidad; i++) {
+			nombresAleatorios[i] = paises[(int) (Math.floor(Math.random() * ((paises.length - 1) - 0 + 1) + 0))];
+		}
+		return nombresAleatorios;
+	}
+
+
+
 	
 	
 }

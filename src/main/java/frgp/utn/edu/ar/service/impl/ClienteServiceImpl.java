@@ -42,10 +42,11 @@ public class ClienteServiceImpl  implements ClienteService{
 	@Override
 	public Cliente save(Cliente object) {
 		List<Cuenta> sListCuenta = new ArrayList<Cuenta>();
-		sListCuenta.add(GenerarCliente.getCuenta());
-		object.setCuenta(sListCuenta);
-		Usuario usr =new Usuario(object.getApellido(), "1234" , new Rol(1));
+		Usuario usr =new Usuario(object.getNombre() + "." + object.getApellido(), "1234" , new Rol(1));
 		object.setUsuario(usr);
+		sListCuenta.add(GenerarCliente.getCuenta());
+		sListCuenta.get(0).setCliente(object);
+		object.setCuenta(sListCuenta);
 		return clienteDao.save(object);
 	}
 

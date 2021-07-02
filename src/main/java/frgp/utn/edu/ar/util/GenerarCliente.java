@@ -60,7 +60,9 @@ public class GenerarCliente {
 	    sCuenta.setTipoCuenta(sTipoCuenta);
 	    sListCuenta.add(sCuenta); 
 	    sCliente.setCuenta(sListCuenta);
+	    sCliente.setSexo("Masculino");
 	    sCliente.setDireccion(NombresAleatorios.generarNombresAleatoriosDir(1)[0]);
+	    sCliente.setNacionalidad(NombresAleatorios.generarGentiliciosAleatorios(1)[0]);
 	    sCliente.setActivo(true);
 	    sCliente.setFechaNacimiento(fecha);
 	    sCliente.setDni(Long.parseLong(dni));
