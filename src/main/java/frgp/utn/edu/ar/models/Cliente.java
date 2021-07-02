@@ -43,7 +43,9 @@ public class Cliente {
 	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "cliente")
 	private List<Cuenta> cuentaList = new ArrayList<Cuenta>();
 	
-	public Cliente(){}
+	public Cliente(	){
+		activo = true;
+	}
 
 	
 	public int getIdCliente() {
