@@ -63,7 +63,7 @@ public class RegistrarController {
 	   model.addAttribute("cliente", sCliente);
 	   model.addAttribute("cuenta", sCliente.getCuenta().get(0));
 	   model.addAttribute("usr", sCliente.getUsuario());
-	   model.addAttribute("localidad", sCliente.getLocalidad());
+	  model.addAttribute("localidad", sCliente.getLocalidad());
 	   return "success";
    }
 	

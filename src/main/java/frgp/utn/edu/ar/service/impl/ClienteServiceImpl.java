@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import frgp.utn.edu.ar.dao.ClienteDao;
+import frgp.utn.edu.ar.dao.LocalidadDao;
 import frgp.utn.edu.ar.models.Cliente;
 import frgp.utn.edu.ar.models.Cuenta;
+import frgp.utn.edu.ar.models.Localidad;
 import frgp.utn.edu.ar.models.Rol;
 import frgp.utn.edu.ar.models.Usuario;
 import frgp.utn.edu.ar.service.ClienteService;
@@ -21,6 +23,10 @@ public class ClienteServiceImpl  implements ClienteService{
 
 	@Autowired
 	private ClienteDao clienteDao;
+	
+	@Autowired
+	private LocalidadDao localidadDao;
+	
 	@Override
 	public Cliente findByName(String name) {
 		// TODO Auto-generated method stub
@@ -41,12 +47,21 @@ public class ClienteServiceImpl  implements ClienteService{
 
 	@Override
 	public Cliente save(Cliente object) {
+		Localidad loc = new Localidad();
+		
+		
+		//loc = localidadDao.findByName(object.getLocalidad().getLocalidad());
+		
+		loc = localidadDao.findByName("Pacheco");
+		
 		List<Cuenta> sListCuenta = new ArrayList<Cuenta>();
 		Usuario usr =new Usuario(object.getNombre() + "." + object.getApellido(), "1234" , new Rol(1));
 		object.setUsuario(usr);
 		sListCuenta.add(GenerarCliente.getCuenta());
 		sListCuenta.get(0).setCliente(object);
 		object.setCuenta(sListCuenta);
+		object.setLocalidad(loc);
+		
 		return clienteDao.save(object);
 	}
 
