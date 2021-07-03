@@ -46,14 +46,18 @@ public class TransferenciaController {
 
 		 // si el monto es mayor return una jsp de error con un boton volver 
 		 // return "errorTans";
+		 Cuenta sCuenta = new Cuenta();
 		 
-		 
-		// Cuenta sCuenta = cuentaService.findById(Long.parseLong(transferenciaDto.getCuentaOrigen()));
-		 
-	//	 if (Float.parseFloat(transferenciaDto.getImporte()) > sCuenta.getSaldo())
-	//	 {
-	//		 return "error_trans";
-	//	 }
+		//sCuenta = cuentaService.findById(Long.parseLong("10"));
+			
+		sCuenta = cuentaService.findByName(transferenciaDto.getCuentaOrigen());
+		System.out.println("el id " + transferenciaDto.getCuentaOrigen());
+
+		
+		if (Float.parseFloat(transferenciaDto.getImporte()) > sCuenta.getSaldo() )
+		 {
+			 return "error_trans";
+		 }
 		 
 			 
 
