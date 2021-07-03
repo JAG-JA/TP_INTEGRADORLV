@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import frgp.utn.edu.ar.dto.TransferenciaDto;
 import frgp.utn.edu.ar.models.Cuenta;
 import frgp.utn.edu.ar.models.Transferencia;
+import frgp.utn.edu.ar.models.Usuario;
 import frgp.utn.edu.ar.service.CuentaService;
 import frgp.utn.edu.ar.service.TransferenciaService;
 
@@ -22,7 +23,7 @@ import frgp.utn.edu.ar.service.TransferenciaService;
 public class TransferenciaController {
  
 	@Autowired
-	private CuentaService cuentaSevice;
+	private CuentaService cuentaService;
 	
 	@Autowired
 	private TransferenciaService  transferencia;
@@ -31,7 +32,7 @@ public class TransferenciaController {
 	public String viewFormTransferencia(@PathVariable("idCuenta") String idCuenta, Model model) {
 		
 		Cuenta sCuenta = new Cuenta();
-		sCuenta =  cuentaSevice.findById(Long.parseLong(idCuenta));
+		sCuenta =  cuentaService.findById(Long.parseLong(idCuenta));
 		model.addAttribute("cuentaOrigen", sCuenta);
 		TransferenciaDto transferenciaDto  =  new TransferenciaDto();
 		transferenciaDto.setCuentaOrigen(sCuenta.getNroCuenta());
@@ -42,8 +43,20 @@ public class TransferenciaController {
 	
 	 @RequestMapping(value="transferencia/transferenciapost", method = RequestMethod.POST)
 	 public String save(@ModelAttribute("transferenciaDto") TransferenciaDto transferenciaDto, BindingResult result, Model model) {
+
 		 // si el monto es mayor return una jsp de error con un boton volver 
 		 // return "errorTans";
+		 
+		 
+		// Cuenta sCuenta = cuentaService.findById(Long.parseLong(transferenciaDto.getCuentaOrigen()));
+		 
+	//	 if (Float.parseFloat(transferenciaDto.getImporte()) > sCuenta.getSaldo())
+	//	 {
+	//		 return "error_trans";
+	//	 }
+		 
+			 
+
 		 transferencia.save(transferenciaDto);
 		 return "successTrans";
 	}
