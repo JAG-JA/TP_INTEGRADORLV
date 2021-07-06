@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import frgp.utn.edu.ar.dao.CuentaDao;
 import frgp.utn.edu.ar.models.Cuenta;
+import frgp.utn.edu.ar.models.Usuario;
 import frgp.utn.edu.ar.service.CuentaService;
 
 
@@ -52,4 +53,12 @@ public class CuentaServiceImpl implements CuentaService {
 
 	}
 
+	@Override
+	public Cuenta getCuenta(String cuenta) 
+	{
+		 return cuentaDao.getCuenta(cuenta);
+	}
+
+
+	
 }
