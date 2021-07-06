@@ -146,13 +146,13 @@ section .section-title {
 </style>
 </head>
 <body>
-  <jsp:include page="header.jsp"/>
+  <jsp:include page="header_volver.jsp"/>
   <div class="row" style="background: #dcd9d9;">
     
   </div>
    <section id="team" class="pb-5">
     <div class="container">
-        <h5 class="section-title h1">Felicitaciones!!! Transferencia ok</h5>
+        <h5 class="section-title h1">Transferencia Realizada</h5>
         <div class="row">
             <!-- Team member -->
             
