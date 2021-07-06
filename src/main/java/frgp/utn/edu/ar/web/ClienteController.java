@@ -68,7 +68,31 @@ public class ClienteController {
 	    
 	    model.addAttribute("sComboLocalidades",sListLocalidad);
 	    model.addAttribute("sListSex",sListSex);
-	    model.addAttribute("sListSex",sListNacionalidad);
+	    model.addAttribute("sListLocalidad",sListNacionalidad);
+	    
+	    return "registrar";  
+	}
+	
+	
+	@RequestMapping("updateregistro/{id}")
+	public String updateregistro(@PathVariable String id, Model model ) {
+		 Cliente sCliente  = clienteService.findById(Long.parseLong(id));
+		 model.addAttribute("cliente",sCliente);
+		List<Localidad> sListLocalidad = localidadService.findAll();
+	    List<String> sListSex = new ArrayList<String>();
+	    sListSex.add("Masculino");
+	    sListSex.add("Femenino");
+	    sListSex.add("!Binario");
+	    
+	    List<String> sListNacionalidad = new ArrayList<String>();
+	    sListNacionalidad.add("Argentina");
+	    sListNacionalidad.add("Congoleña");
+	    sListNacionalidad.add("Paraguaya");
+	    
+	    
+	    model.addAttribute("sComboLocalidades",sListLocalidad);
+	    model.addAttribute("sListSex",sListSex);
+	    model.addAttribute("sListLocalidad",sListNacionalidad);
 	    
 	    return "registrar";  
 	}

@@ -82,7 +82,9 @@ pageEncoding="ISO-8859-1"%>
 			     </div>
 			  </div>
 		      <table style="width: 100%; border: 1px solid #8e7a7a;" > 
-		          <tr style="width: 100%; border: 1px solid #8e7a7a;height: 51px;"><td style="text-align:center">Mi perfil</td></tr>
+		          <tr style="width: 100%; border: 1px solid #8e7a7a;height: 51px;"><td style="text-align:center"><a href="updateregistro/${cliente.idCliente}"  class="btn btn-secondary">
+                      	    "Mi Perfil"</i>
+                      	 </a></td></tr>
 		          <tr style="width: 100% ;border: 1px solid #8e7a7a;height: 51px;"><td style="text-align:center">Movimiento</td></tr>
 		          <tr style="width: 100%; border: 1px solid #8e7a7a;height: 51px;"><td style="text-align:center">Claves</td></tr>  
 		          <tr style="width: 100%; border: 1px solid #8e7a7a;height: 51px;"><td style="text-align:center">Limites</td></tr>
