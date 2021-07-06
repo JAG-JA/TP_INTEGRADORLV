@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import frgp.utn.edu.ar.config.HibernateConf;
 import frgp.utn.edu.ar.dao.CuentaDao;
+import frgp.utn.edu.ar.models.Cliente;
 import frgp.utn.edu.ar.models.Cuenta;
 import frgp.utn.edu.ar.models.Usuario;
 
@@ -69,5 +70,18 @@ public class CuentaDaoImpl implements CuentaDao {
 	public Cuenta getCuenta(String cuenta) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void updateCuenta(Cuenta cuenta) {
+		session.getTransaction().begin();
+		NativeQuery  query = session.createSQLQuery("update cuenta set saldo = :SALDOCTA  where idcuenta = :ID");
+		query.addEntity(Cliente.class);
+		query.setParameter("ID", cuenta.getIdCuenta());
+		query.setParameter("SALDOCTA", cuenta.getSaldo());
+		int id = query.executeUpdate();
+		System.out.println("el id " + id);
+		session.getTransaction().commit();
+		
 	}
 }

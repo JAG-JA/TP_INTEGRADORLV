@@ -30,7 +30,7 @@ public class Movimiento {
 	private String detalleMovimiento;
 	private Double importe;
 
-	@OneToOne(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
+	@OneToOne //(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
 	@JoinColumn(name="cuenta_c")
 	private Cuenta cuenta;
 
