@@ -18,7 +18,7 @@ public class Localidad {
 	private int id;
 	private int cp;
 	private String localidad;
-	@OneToOne//(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="provincia_c")
 	private Provincia provincia;
 	private Boolean activo;

@@ -32,16 +32,16 @@ public class Cliente {
 	private String nacionalidad;
 	private Date fechaNacimiento;
 	private String direccion;
-	@OneToOne//(cascade = CascadeType.DETACH)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="localidad_c")
 	private Localidad localidad;
-	@OneToOne//(cascade = CascadeType.DETACH)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="usuario_c")
 	private Usuario usuario;
 	private Boolean activo;
 	
 	//@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "cliente")
-	@OneToMany//(cascade=CascadeType.DETACH,fetch = FetchType.LAZY, mappedBy = "cliente")
+	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "cliente")
 	private List<Cuenta> cuentaList = new ArrayList<Cuenta>();
 	
 	public Cliente(	){

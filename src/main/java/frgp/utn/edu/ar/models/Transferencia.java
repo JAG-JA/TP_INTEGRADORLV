@@ -21,10 +21,10 @@ public class Transferencia {
 		private int nroTransferencia;
 		private Date fecha;
 		private String detalle;
-		@OneToOne//(cascade = CascadeType.ALL)
+		@OneToOne(cascade = CascadeType.ALL)
 		@JoinColumn(name="movimiento_origen")
 		private Movimiento movimientoOrigen;
-		@OneToOne//(cascade = CascadeType.ALL)
+		@OneToOne(cascade = CascadeType.ALL)
 		@JoinColumn(name="movimiento_destino")
 		private Movimiento movimientoDestino;
 
