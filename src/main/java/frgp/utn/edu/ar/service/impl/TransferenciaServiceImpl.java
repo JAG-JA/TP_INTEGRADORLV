@@ -93,8 +93,9 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	   sTranferencia.setFecha(new Date() );
 
 	   Movimiento sMDestino = new Movimiento();
-	   sMDestino.setFechaAlta(new Date());
 	   sMDestino.setIdMovimiento(1);
+	   sMDestino.setFechaAlta(new Date());
+	   sMDestino.setTipoMovimiento(tipoMovimientoDao.findTipoMovimientoById(1));
 	   sMDestino.setCuenta(cuentaDao.findByName(dto.getCuentaDestino()));
 	   sMDestino.setImporte(Double.parseDouble(dto.getImporte()));
 	   
@@ -117,6 +118,7 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	   Movimiento sMOrigen = new Movimiento();
 	   sMOrigen.setFechaAlta(new Date());
 	   sMOrigen.setIdMovimiento(1);
+	   sMOrigen.setTipoMovimiento(tipoMovimientoDao.findTipoMovimientoById(2));
 	   sMOrigen.setCuenta(cuentaDao.findByName(dto.getCuentaOrigen()));
 	   sMOrigen.setImporte(Double.parseDouble(dto.getImporte())*-1);
 	   

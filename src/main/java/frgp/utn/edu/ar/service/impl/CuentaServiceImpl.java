@@ -19,8 +19,7 @@ public class CuentaServiceImpl implements CuentaService {
 
 	@Override
 	public Cuenta findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return cuentaDao.findByName(name);
 	}
 
 	@Override
