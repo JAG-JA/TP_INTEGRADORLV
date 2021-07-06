@@ -35,12 +35,11 @@ public class Cuenta {
 	private String nombreCuenta;
 	private Date fechaAlta;
 	private Boolean activo;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne//(cascade = CascadeType.ALL)
 	@JoinColumn(name="idTipoCuenta")
 	private TipoCuenta tipoCuenta;
 	
-	//@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne //(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @JoinColumn(name = "idCliente",nullable=false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Cliente cliente;

@@ -7,6 +7,7 @@ public interface CuentaDao extends Crud<Cuenta> {
 	
 	public Cuenta getCuenta(String cuenta);
 	void  updateCuenta(Cuenta cuenta);
+	void  update(Cuenta cuenta);
 	
 
 }

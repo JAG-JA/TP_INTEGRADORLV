@@ -13,7 +13,9 @@ import frgp.utn.edu.ar.models.Movimiento;
 
 @Repository
 public class HistorialDaoImpl implements HistorialDao {
+
 	Session session =  HibernateConf.getSessionFactory().openSession();
+	
 	@Override
 	public Movimiento findByName(String name) {
 		// TODO Auto-generated method stub
@@ -53,10 +55,12 @@ public class HistorialDaoImpl implements HistorialDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Movimiento> findAllByCuenta(String cuenta_c) {
+		//Session session =  HibernateConf.getSessionFactory().openSession();
 		NativeQuery  query = session.createSQLQuery("SELECT * FROM MOVIMIENTO WHERE CUENTA_C = :cuenta_c");
 		query.addEntity(Movimiento.class);
 		query.setParameter("cuenta_c", cuenta_c);
 	    List<?>  sList =  query.getResultList();
+	    //session.close();
 	    return    sList.size() > 0 ? (List<Movimiento>) sList  : null;
 	}
 

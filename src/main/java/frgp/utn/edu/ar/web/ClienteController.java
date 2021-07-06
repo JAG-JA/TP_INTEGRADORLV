@@ -40,8 +40,8 @@ public class ClienteController {
 	@RequestMapping("viewDelete/delete/{id}")
 	public String delete(@PathVariable String id, Model model ) {
 		Cliente sCliente  = clienteService.findById(Long.parseLong(id));
-		clienteService.updateCliente(sCliente);
-        //return "administracion";
+		clienteService.delete(sCliente);
+
         return "redirect:/administracion";  
 	}
 	
@@ -52,8 +52,8 @@ public class ClienteController {
  
 	@RequestMapping("update/{id}")
 	public String update(@PathVariable String id, Model model ) {
-		 Cliente sCliente  = clienteService.findById(Long.parseLong(id));
-		 model.addAttribute("cliente",sCliente);
+		Cliente sCliente  = clienteService.findById(Long.parseLong(id));
+		model.addAttribute("cliente",sCliente);
 		List<Localidad> sListLocalidad = localidadService.findAll();
 	    List<String> sListSex = new ArrayList<String>();
 	    sListSex.add("Masculino");

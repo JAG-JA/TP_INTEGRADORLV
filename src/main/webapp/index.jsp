@@ -27,7 +27,7 @@
 					      <img class="d-block w-100"   src="<c:url value="/images/1.jpg"/>" alt="First slide">
 					    </div>
 					    <div class="carousel-item">
-					      <img class="d-block w-100"  src="<c:url value="/images/2.webp"/>"  alt="Second slide">
+					      <img class="d-block w-100"  src="<c:url value="/images/2.jpg"/>"  alt="Second slide">
 					    </div>
 					   
 				  </div>

@@ -18,7 +18,7 @@ import frgp.utn.edu.ar.models.Usuario;
 @Repository
 public class UsuarioDaoImpl implements UsuarioDao {
 
-	private SessionFactory  sessionFactory = HibernateConf.getSessionFactory();
+	Session session = HibernateConf.getSessionFactory().openSession();
 	
 	@Override
 	public Usuario findByName(String name) {
@@ -60,13 +60,13 @@ public class UsuarioDaoImpl implements UsuarioDao {
 	@Override
 	public Usuario getUser(Usuario usr) {
     
-	 Session session = HibernateConf.getSessionFactory().openSession();
+	 //Session session = HibernateConf.getSessionFactory().openSession();
 	 NativeQuery query =  session.createSQLQuery("SELECT * FROM USUARIO WHERE USERNAME =:USUARIO AND PASSWORD =:PASS");	 
 	 query.setParameter("USUARIO", usr.getUserName());
 	 query.setParameter("PASS", usr.getPassword());
 	 query.addEntity(Usuario.class);
 	 List<?>  sList =  query.getResultList();
-	 
+	 //session.close();
 	 return    sList.size() > 0 ? (Usuario) sList.get(0)  : null;
 	
 	}
