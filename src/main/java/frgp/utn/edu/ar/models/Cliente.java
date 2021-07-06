@@ -40,7 +40,8 @@ public class Cliente {
 	private Usuario usuario;
 	private Boolean activo;
 	
-	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "cliente")
+	//@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "cliente")
+	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "cliente")
 	private List<Cuenta> cuentaList = new ArrayList<Cuenta>();
 	
 	public Cliente(	){

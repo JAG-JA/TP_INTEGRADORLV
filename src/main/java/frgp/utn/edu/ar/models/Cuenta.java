@@ -39,7 +39,8 @@ public class Cuenta {
 	@JoinColumn(name="idTipoCuenta")
 	private TipoCuenta tipoCuenta;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	//@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
     @JoinColumn(name = "idCliente",nullable=false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Cliente cliente;

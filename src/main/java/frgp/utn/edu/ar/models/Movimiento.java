@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,8 +29,8 @@ public class Movimiento {
 	private Date fechaAlta;
 	private String detalleMovimiento;
 	private Double importe;
-	
-	@OneToOne(cascade = CascadeType.ALL)
+
+	@OneToOne(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
 	@JoinColumn(name="cuenta_c")
 	private Cuenta cuenta;
 
