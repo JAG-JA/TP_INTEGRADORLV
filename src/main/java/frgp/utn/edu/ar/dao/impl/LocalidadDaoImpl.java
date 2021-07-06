@@ -18,21 +18,21 @@ public class LocalidadDaoImpl implements LocalidadDao {
 	   
 	Session session =  HibernateConf.getSessionFactory().openSession();
 
-		
-		
 	@Override
 	public Localidad findByName(String name) {
-		
+		//Session session =  HibernateConf.getSessionFactory().openSession();
 		NativeQuery  query = session.createSQLQuery("SELECT * FROM LOCALIDAD WHERE LOCALIDAD = :NOMBRE ");
 		query.addEntity(Localidad.class);
 		query.setParameter("NOMBRE", name);
 		List<?>  sList = query.getResultList();
+		//session.close();
 	    return    sList.size() > 0 ? (Localidad) sList.get(0)  : null;
 	}
 
 	@Override
 	public List<Localidad> findAll() {
-		Session session =  HibernateConf.getSessionFactory().openSession();
+		//Session session =  HibernateConf.getSessionFactory().openSession();
+		//session.close();
 		return  session.createCriteria(Localidad.class).list();
 		
 	}

@@ -35,9 +35,9 @@ public class TipoMovimientoDaoImpl implements TipoMovimientoDao{
 	@Override
 	public TipoMovimiento save(TipoMovimiento tipoMovimiento) {
 	   
-		   Session session = HibernateConf.getSessionFactory().openSession();
+		//Session session = HibernateConf.getSessionFactory().openSession();
 		   session.save(tipoMovimiento); 
-		   session.close();
+		   //session.close();
 		   return tipoMovimiento;
 	}
 
@@ -56,10 +56,12 @@ public class TipoMovimientoDaoImpl implements TipoMovimientoDao{
 	@SuppressWarnings("deprecation")
 	@Override
 	public TipoMovimiento findTipoMovimientoById(int idTipoMovimiento) {
+		//Session session = HibernateConf.getSessionFactory().openSession();
 		NativeQuery  query = session.createSQLQuery("SELECT * FROM TIPOMOVIMIENTO WHERE IDTIPOMOVIMIENTO = :ID");
 		query.addEntity(TipoMovimiento.class);
 		query.setParameter("ID", idTipoMovimiento);
 	    List<?>  sList =  query.getResultList();
+	    //session.close();
 	    return    sList.size() > 0 ? (TipoMovimiento) sList.get(0)  : null;
 	}
 	

@@ -104,7 +104,7 @@ public class GenerarCliente {
 		sCuenta.setNroCuenta( "0" + (10000 + Math.random() * 99999));
 		sCuenta.setCbu( "00000000000000000" + (10000 + Math.random() * 99999));
 		sCuenta.setFechaCreacion(new Date());
-		sCuenta.setSaldo(1000.00);
+		sCuenta.setSaldo(10000.00);
 		return sCuenta;
 	}
 	

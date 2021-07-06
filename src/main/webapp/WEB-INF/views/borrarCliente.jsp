@@ -152,49 +152,25 @@ section .section-title {
   </div>
    <section id="team" class="pb-5">
     <div class="container">
-        <h5 class="section-title h1">Esta Seguro de borrar al cliente</h5>
+        <h5 class="section-title h1">¿Esta Seguro de borrar al cliente?</h5>
         <div class="row">
             <!-- Team member -->
             <div class="col-xs-12 col-sm-6 col-md-4" style="margin-left: 33%;">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                    <div class="mainflip">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p>
-                                     <img class="d-block w-100"   src="<c:url value="/images/perfil.png"/>" alt="Perfil" style="width: 47%!important; margin-left: 26%;">
-                                    </p>
-                                    <h4 class="card-title">${cliente.nombre}</h4>
-                                    <p class="card-text">Sos parte de está comunidad.</p>
-                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Información</h4>
-                                    <p class="card-text">
-                                       <ul>
-                                       	<li>
-                                     	 	 CLIENTE ${cliente.nombre} 	${cliente.apellido}
-                                       	</li>
-                                       	 <li>
-                                     		  USUARIO ${usr.userName}  Password ${usr.password} 
-                                       	</li>
-                                       	 <li>
-                                       		 CUENTA NRO ${cuenta.nroCuenta}  CBU ${cuenta.cbu} 
-                                       	</li>
-                                       	 
-                                       </ul>
-                                    </p>
-                                    <a href="delete/${cliente.idCliente}">Aceptar</a>
-                                   <a href="javascript:history.back()">Volver </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
+                 <div class="card-body text-center mt-4">
+                     <h4 class="card-title">Información</h4>
+                     <p class="card-text">
+                        <ul>
+                        	<li>
+                      	 	 CLIENTE: ${cliente.nombre} 	${cliente.apellido}
+                        	</li>
+                        	 
+                        </ul>
+                     </p>
+                     <a href="delete/${cliente.idCliente}">Aceptar</a>
+                    <a href="javascript:history.back()">Volver </a>
+                 </div>
+
             </div>
         
 

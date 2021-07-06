@@ -135,6 +135,7 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	   sMDestino.setTipoMovimiento(tipoMovimientoDao.findTipoMovimientoById(1));
 	   sMDestino.setCuenta(cuentaDao.findByName(dto.getCuentaDestino()));
 	   sMDestino.setImporte(Double.parseDouble(dto.getImporte()));
+	   sMDestino.setDetalleMovimiento(dto.getDetalle());
 	   
 //	   Movimiento sMOrigen = new Movimiento();
 //	   sMOrigen.setFechaAlta(new Date());
@@ -159,6 +160,7 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	   sMOrigen.setTipoMovimiento(tipoMovimientoDao.findTipoMovimientoById(2));
 	   sMOrigen.setCuenta(cuentaDao.findByName(dto.getCuentaOrigen()));
 	   sMOrigen.setImporte(Double.parseDouble(dto.getImporte())*-1);
+	   sMOrigen.setDetalleMovimiento(dto.getDetalle());
 	   
 	   Integer idMovimeintoOrigen = movimientoDao.saveM(sMOrigen);
 	   System.out.println("idMovimeintoOrigen:"+idMovimeintoOrigen);
@@ -171,15 +173,14 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	   sCuentaOrigen = sMOrigen.getCuenta();
 	   sCuentaOrigen.setSaldo(sCuentaOrigen.getSaldo()-Double.parseDouble(dto.getImporte()));
 	   cuentaDao.updateCuenta(sCuentaOrigen);
+	   //cuentaDao.update(sCuentaOrigen);
 	   
 	   Cuenta sCuentaDestino = new Cuenta();
 	   sCuentaDestino = sMDestino.getCuenta();
 	   sCuentaDestino.setSaldo(sCuentaDestino.getSaldo()+Double.parseDouble(dto.getImporte()));
 	   cuentaDao.updateCuenta(sCuentaDestino);
-	   
-	   // up de la cuenta restando el saldo.
-	   // la validacion del monto
-	   // sMOrigen.setIdMovimiento(1);  agregar el verdadero tipo de moviento.
+	   //cuentaDao.update(sCuentaDestino);
+
 	}
 
 	@Override

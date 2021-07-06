@@ -33,9 +33,9 @@ public class TipoCuentaDaoImpl implements TipoCuentaDao{
 
 	@Override
 	public TipoCuenta save(TipoCuenta tipoCuenta) {
-		   Session session = HibernateConf.getSessionFactory().openSession();
+		   //Session session = HibernateConf.getSessionFactory().openSession();
 		   session.save(tipoCuenta); 
-		   session.close();
+		   //session.close();
 		   return tipoCuenta;
 	}
 
@@ -53,7 +53,10 @@ public class TipoCuentaDaoImpl implements TipoCuentaDao{
 
 	@Override
 	public TipoCuenta findTipoCuentaById(int idTipoCuenta) {
-	   	return session.get(TipoCuenta.class, idTipoCuenta);
+		//Session session =  HibernateConf.getSessionFactory().openSession();
+		TipoCuenta sTipoCuenta = session.get(TipoCuenta.class, idTipoCuenta);
+		//session.close();
+	   	return sTipoCuenta;
 	}
 
 }

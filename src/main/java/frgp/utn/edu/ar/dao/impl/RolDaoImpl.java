@@ -11,6 +11,8 @@ import frgp.utn.edu.ar.models.Rol;
 @Repository
 public class RolDaoImpl implements RolDao{
 
+	Session session = HibernateConf.getSessionFactory().openSession();
+	   
 	@Override
 	public Rol findByName(String name) {
 		// TODO Auto-generated method stub
@@ -31,9 +33,9 @@ public class RolDaoImpl implements RolDao{
 
 	@Override
 	public Rol save(Rol rol) {
-	   Session session = HibernateConf.getSessionFactory().openSession();
+	   //Session session = HibernateConf.getSessionFactory().openSession();
 	   session.save(rol); 
-	   session.close();
+	   //session.close();
 	   return rol;
 	}
 

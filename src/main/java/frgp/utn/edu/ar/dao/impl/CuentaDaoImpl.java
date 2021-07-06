@@ -17,15 +17,17 @@ import frgp.utn.edu.ar.models.Usuario;
 @Repository
 public class CuentaDaoImpl implements CuentaDao {
 
-    private Session session = HibernateConf.getSessionFactory().openSession();	
+    Session session = HibernateConf.getSessionFactory().openSession();	
     
     @SuppressWarnings({ "deprecation", "rawtypes" })
     @Override
 	public Cuenta findByName(String name) {
+    	//Session session = HibernateConf.getSessionFactory().openSession();
 	    NativeQuery  query = session.createSQLQuery("SELECT * FROM CUENTA WHERE nroCuenta = :name");
 		query.addEntity(Cuenta.class);
 		query.setParameter("name", name);
 	    List<?>  sList =  query.getResultList();
+	    //session.close();
 	    return    sList.size() > 0 ? (Cuenta) sList.get(0)  : null;
 
 	}
@@ -33,10 +35,12 @@ public class CuentaDaoImpl implements CuentaDao {
 	@SuppressWarnings({ "deprecation", "rawtypes" })
 	@Override
 	public Cuenta findById(Long id) {
+		//Session session = HibernateConf.getSessionFactory().openSession();
 	    NativeQuery  query = session.createSQLQuery("SELECT * FROM CUENTA WHERE idCuenta = :idCuenta");
 		query.addEntity(Cuenta.class);
 		query.setParameter("idCuenta", id);
 	    List<?>  sList =  query.getResultList();
+	    //session.close();
 	    return    sList.size() > 0 ? (Cuenta) sList.get(0)  : null;
 	}
 
@@ -50,8 +54,10 @@ public class CuentaDaoImpl implements CuentaDao {
 
 	@Override
 	public Cuenta save(Cuenta object) {
-		// TODO Auto-generated method stub
-		return null;
+		//Session session = HibernateConf.getSessionFactory().openSession();
+	   session.save(object); 
+	   //session.close();
+	   return object;
 	}
 
 	@Override
@@ -74,6 +80,7 @@ public class CuentaDaoImpl implements CuentaDao {
 
 	@Override
 	public void updateCuenta(Cuenta cuenta) {
+		//Session session = HibernateConf.getSessionFactory().openSession();
 		session.getTransaction().begin();
 		NativeQuery  query = session.createSQLQuery("update cuenta set saldo = :SALDOCTA  where idcuenta = :ID");
 		query.addEntity(Cliente.class);
@@ -82,6 +89,13 @@ public class CuentaDaoImpl implements CuentaDao {
 		int id = query.executeUpdate();
 		System.out.println("el id " + id);
 		session.getTransaction().commit();
-		
+		//session.close();		
+	}
+	
+	@Override
+	public void update(Cuenta object) {
+		//Session session = HibernateConf.getSessionFactory().openSession();
+	   session.saveOrUpdate(object); 
+	   //session.close();
 	}
 }

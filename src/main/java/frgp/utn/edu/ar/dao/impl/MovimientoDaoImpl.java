@@ -11,6 +11,8 @@ import frgp.utn.edu.ar.models.Movimiento;
 @Repository
 public class MovimientoDaoImpl implements MovimientoDao{
 
+	Session session = HibernateConf.getSessionFactory().openSession();
+	
 	@Override
 	public Movimiento findByName(String name) {
 		// TODO Auto-generated method stub
@@ -31,9 +33,9 @@ public class MovimientoDaoImpl implements MovimientoDao{
 
 	@Override
 	public Movimiento save(Movimiento movimiento) {
-	   Session session = HibernateConf.getSessionFactory().openSession();
+		//Session session = HibernateConf.getSessionFactory().openSession();
 	   session.save(movimiento); 
-	   session.close();
+	   //session.close();
 	   return movimiento;
 	}
 
@@ -58,7 +60,7 @@ public class MovimientoDaoImpl implements MovimientoDao{
 				session.getTransaction().begin();
 				id = (Integer) session.save(sMovimiento); 
 				session.getTransaction().commit();
-				
+				session.close();
 			}
 			
 		} catch (Exception e) {
