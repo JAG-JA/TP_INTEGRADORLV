@@ -43,24 +43,15 @@ public class TransferenciaController {
 	
 	 @RequestMapping(value="transferencia/transferenciapost", method = RequestMethod.POST)
 	 public String save(@ModelAttribute("transferenciaDto") TransferenciaDto transferenciaDto, BindingResult result, Model model) {
-
-		 // si el monto es mayor return una jsp de error con un boton volver 
-		 // return "errorTans";
-		 Cuenta sCuenta = new Cuenta();
 		 
-		//sCuenta = cuentaService.findById(Long.parseLong("10"));
+		 Cuenta sCuenta = new Cuenta();
+	
+		 sCuenta = cuentaService.findByName(transferenciaDto.getCuentaOrigen());
 			
-		sCuenta = cuentaService.findByName(transferenciaDto.getCuentaOrigen());
-		System.out.println("el id " + transferenciaDto.getCuentaOrigen());
-
-		
 		if (Float.parseFloat(transferenciaDto.getImporte()) > sCuenta.getSaldo() )
 		 {
 			 return "error_trans";
 		 }
-		 
-			 
-
 		 transferencia.save(transferenciaDto);
 		 return "successTrans";
 	}
