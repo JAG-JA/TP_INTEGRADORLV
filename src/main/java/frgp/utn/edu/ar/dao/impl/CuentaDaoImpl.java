@@ -84,4 +84,13 @@ public class CuentaDaoImpl implements CuentaDao {
 		session.getTransaction().commit();
 		
 	}
+	
+
+	@Override
+	public void update(Cuenta object) {
+		//Session session = HibernateConf.getSessionFactory().openSession();
+	   session.saveOrUpdate(object); 
+	   //session.close();
+	}
+	
 }
