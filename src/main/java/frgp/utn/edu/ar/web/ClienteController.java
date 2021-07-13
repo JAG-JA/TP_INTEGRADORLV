@@ -68,7 +68,7 @@ public class ClienteController {
 	    
 	    model.addAttribute("sComboLocalidades",sListLocalidad);
 	    model.addAttribute("sListSex",sListSex);
-	    model.addAttribute("sListLocalidad",sListNacionalidad);
+	    model.addAttribute("sListNacionalidad",sListNacionalidad);
 	    
 	    return "registrar";  
 	}

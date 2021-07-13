@@ -96,7 +96,7 @@
 		<div class="login-form">
 			    <div class="panel">
 				   <h2> Registrar</h2>
-				   <p>Información requerida</p>
+				   <p>Datos del cliente - :</p>
 			   </div>
 			    <form:form id="Registrar" action="save" modelAttribute="cliente">
 			    	
