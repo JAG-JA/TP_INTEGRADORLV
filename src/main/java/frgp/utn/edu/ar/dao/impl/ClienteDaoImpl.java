@@ -53,7 +53,20 @@ public class ClienteDaoImpl  implements ClienteDao{
 
 	@Override
 	public void delete(Cliente object) {
+		//Session session = HibernateConf.getSessionFactory().openSession();
+		session.getTransaction().begin();
+		NativeQuery  query = session.createSQLQuery("update cliente set activo = 1  where idcliente = :ID");
+		query.addEntity(Cliente.class);
+		query.setParameter("ID", object.getIdCliente());
+		int id = query.executeUpdate();
+		System.out.println("el id " + id);
+		session.getTransaction().commit();
+		//session.close();
+
+		/*
+	    Session session = HibernateConf.getSessionFactory().openSession();
 		session.delete(object);
+	    session.close();*/
 		
 	}
 	

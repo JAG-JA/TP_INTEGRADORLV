@@ -63,7 +63,7 @@ public class RegistrarController {
 	   model.addAttribute("cliente", sCliente);
 	   model.addAttribute("cuenta", sCliente.getCuenta().get(0));
 	   model.addAttribute("usr", sCliente.getUsuario());
-	  model.addAttribute("localidad", sCliente.getLocalidad());
+	   model.addAttribute("localidad", sCliente.getLocalidad());
 	   return "success";
    }
 	
@@ -71,7 +71,7 @@ public class RegistrarController {
    public void addAttributes(Model model) {
 	   List<Localidad> sListLocalidad = localidadService.findAll();
 	   model.addAttribute("localidad", sListLocalidad);
-       model.addAttribute("msg", "Welcome to the Netherlands!");
+       //model.addAttribute("msg", "Welcome to the Netherlands!");
    }
 	
 	   

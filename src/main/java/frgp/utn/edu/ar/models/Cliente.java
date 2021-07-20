@@ -32,10 +32,10 @@ public class Cliente {
 	private String nacionalidad;
 	private Date fechaNacimiento;
 	private String direccion;
-	@OneToOne //(cascade = CascadeType.ALL)
+	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn(name="localidad_c")
 	private Localidad localidad;
-	@OneToOne  //(cascade = CascadeType.ALL)
+	@OneToOne  (cascade = CascadeType.ALL)
 	@JoinColumn(name="usuario_c")
 	private Usuario usuario;
 	private Boolean activo;

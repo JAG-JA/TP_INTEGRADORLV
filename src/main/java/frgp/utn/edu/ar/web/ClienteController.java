@@ -40,8 +40,10 @@ public class ClienteController {
 	@RequestMapping("viewDelete/delete/{id}")
 	public String delete(@PathVariable String id, Model model ) {
 		Cliente sCliente  = clienteService.findById(Long.parseLong(id));
-		clienteService.updateCliente(sCliente);
+		//clienteService.updateCliente(sCliente);
         //return "administracion";
+		clienteService.delete(sCliente);
+		
         return "redirect:/administracion";  
 	}
 	

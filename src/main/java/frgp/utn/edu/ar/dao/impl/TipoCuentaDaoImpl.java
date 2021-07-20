@@ -53,7 +53,8 @@ public class TipoCuentaDaoImpl implements TipoCuentaDao{
 
 	@Override
 	public TipoCuenta findTipoCuentaById(int idTipoCuenta) {
-	   	return session.get(TipoCuenta.class, idTipoCuenta);
+		TipoCuenta sTipoCuenta = session.get(TipoCuenta.class, idTipoCuenta);
+	   	return sTipoCuenta;
 	}
 
 }
