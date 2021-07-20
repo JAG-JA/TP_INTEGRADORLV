@@ -84,9 +84,22 @@ public class ClienteServiceImpl  implements ClienteService{
 		return clienteDao.findClienteByUsuario(idUsuario);
 	}
 	
+	
 	@Override
 	public void updateCliente(Cliente cliente) {
-		//cliente.setActivo(false);
+		//Localidad loc = new Localidad();
+		//loc = localidadDao.findByName(object.getLocalidad().getLocalidad());
+		
+		//loc = localidadDao.findByName("Pacheco");
+		
+		//List<Cuenta> sListCuenta = new ArrayList<Cuenta>();
+		//Usuario usr =new Usuario(object.getNombre() + "." + object.getApellido(), "1234" , new Rol(1));
+		//object.setUsuario(usr);
+		//sListCuenta.add(GenerarCliente.getCuenta());
+		//sListCuenta.get(0).setCliente(object);
+		//object.setCuenta(sListCuenta);
+		//object.setLocalidad(loc);
+				
 		clienteDao.updateCliente(cliente);
 		
 	}
