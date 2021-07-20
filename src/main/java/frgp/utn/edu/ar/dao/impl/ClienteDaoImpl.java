@@ -103,7 +103,8 @@ public class ClienteDaoImpl  implements ClienteDao{
 		//query.setParameter("LOC", cliente.getLocalidad());
 		
 		int id = query.executeUpdate();
-		System.out.println("el id " + id);
+		System.out.println("el idsssssssssssssssssssssss " + cliente.getIdCliente());
+		System.out.println("el nombre " + cliente.getNombre());
 		session.getTransaction().commit();
 		
 	}

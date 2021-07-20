@@ -100,6 +100,16 @@
 			   </div>
 			    <form:form id="Update_registro" action="../updateCliente" modelAttribute="cliente">
 			    	<div class="row">
+			    	
+			    	
+			    	 <div class="col-md-6">
+			    	    	  <div class="form-group">
+			       	       			 <form:input path="idCliente" class="form-control"  placeholder="idCliente"/>
+				       		 </div>
+			    	    </div>
+			    	    
+			    	    
+			    	    
 			    	    <div class="col-md-6">
 			    	    	  <div class="form-group">
 			       	       			 <form:input path="nombre" class="form-control"  placeholder="Nombre"/>

@@ -74,15 +74,15 @@ public class RegistrarController {
 	   
 	   //si el cliente tiene ID tengo que actualizar y sino que siga creando.
 	   
-	   System.out.println(cliente.getNombre());
+	   System.out.println("Nombre:" + cliente.getNombre());
 	   //Cliente sCliente = clienteService.save(cliente);
 	   clienteService.updateCliente(cliente);
 	   
-	   model.addAttribute("cliente", cliente);
-	   model.addAttribute("cuenta", cliente.getCuenta().get(0));
-	   model.addAttribute("usr", cliente.getUsuario());
-	   model.addAttribute("localidad", cliente.getLocalidad());
-	   return "success";
+	  // model.addAttribute("cliente", cliente);
+	//   model.addAttribute("cuenta", cliente.getCuenta().get(0));
+	//   model.addAttribute("usr", cliente.getUsuario());
+	//   model.addAttribute("localidad", cliente.getLocalidad());
+	   return "cliente_modificado_ok";
    }
 	
    @ModelAttribute
