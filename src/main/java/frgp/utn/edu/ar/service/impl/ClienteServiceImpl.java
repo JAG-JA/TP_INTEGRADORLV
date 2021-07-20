@@ -86,7 +86,7 @@ public class ClienteServiceImpl  implements ClienteService{
 	
 	@Override
 	public void updateCliente(Cliente cliente) {
-		cliente.setActivo(false);
+		//cliente.setActivo(false);
 		clienteDao.updateCliente(cliente);
 		
 	}

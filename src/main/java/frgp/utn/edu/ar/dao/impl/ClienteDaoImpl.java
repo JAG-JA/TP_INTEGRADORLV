@@ -55,7 +55,7 @@ public class ClienteDaoImpl  implements ClienteDao{
 	public void delete(Cliente object) {
 		//Session session = HibernateConf.getSessionFactory().openSession();
 		session.getTransaction().begin();
-		NativeQuery  query = session.createSQLQuery("update cliente set activo = 1  where idcliente = :ID");
+		NativeQuery  query = session.createSQLQuery("update cliente set activo = 0  where idcliente = :ID");
 		query.addEntity(Cliente.class);
 		query.setParameter("ID", object.getIdCliente());
 		int id = query.executeUpdate();
@@ -93,9 +93,15 @@ public class ClienteDaoImpl  implements ClienteDao{
 	@Override
 	public void updateCliente(Cliente cliente) {
 		session.getTransaction().begin();
-		NativeQuery  query = session.createSQLQuery("update cliente set activo = 1  where idcliente = :ID");
+		NativeQuery  query = session.createSQLQuery("update cliente set nacionalidad = :NAC, nombre = :NOMB, apellido = :APEL, sexo = :SEX  where idcliente = :ID"); //, localidad_c = :LOC
 		query.addEntity(Cliente.class);
 		query.setParameter("ID", cliente.getIdCliente());
+		query.setParameter("NAC", cliente.getNacionalidad());
+		query.setParameter("NOMB", cliente.getNombre());
+		query.setParameter("APEL", cliente.getApellido());
+		query.setParameter("SEX", cliente.getSexo());
+		//query.setParameter("LOC", cliente.getLocalidad());
+		
 		int id = query.executeUpdate();
 		System.out.println("el id " + id);
 		session.getTransaction().commit();

@@ -98,7 +98,7 @@
 				   <h2> Informacion del Usuario</h2>
 				   <p> Mi Perfil - </p>
 			   </div>
-			    <form:form id="Registrar" action="save" modelAttribute="cliente">
+			    <form:form id="Registrar" action="updateCliente" modelAttribute="cliente">
 			    	<div class="row">
 			    	    <div class="col-md-6">
 			    	    	  <div class="form-group">

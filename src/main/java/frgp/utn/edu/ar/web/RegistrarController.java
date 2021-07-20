@@ -59,11 +59,29 @@ public class RegistrarController {
 	   //si el cliente tiene ID tengo que actualizar y sino que siga creando.
 	   
 	   System.out.println(cliente.getNombre());
+	   //Cliente sCliente = clienteService.save(cliente);
 	   Cliente sCliente = clienteService.save(cliente);
+	   
 	   model.addAttribute("cliente", sCliente);
 	   model.addAttribute("cuenta", sCliente.getCuenta().get(0));
 	   model.addAttribute("usr", sCliente.getUsuario());
 	   model.addAttribute("localidad", sCliente.getLocalidad());
+	   return "success";
+   }
+   
+   @RequestMapping("/updateCliente") 
+   public String updateCliente(@ModelAttribute("cliente") Cliente cliente, BindingResult result ,Model model) {
+	   
+	   //si el cliente tiene ID tengo que actualizar y sino que siga creando.
+	   
+	   System.out.println(cliente.getNombre());
+	   //Cliente sCliente = clienteService.save(cliente);
+	   clienteService.updateCliente(cliente);
+	   
+	   model.addAttribute("cliente", cliente);
+	   model.addAttribute("cuenta", cliente.getCuenta().get(0));
+	   model.addAttribute("usr", cliente.getUsuario());
+	   model.addAttribute("localidad", cliente.getLocalidad());
 	   return "success";
    }
 	

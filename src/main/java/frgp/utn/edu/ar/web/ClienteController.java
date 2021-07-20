@@ -97,7 +97,7 @@ public class ClienteController {
 	    model.addAttribute("sListSex",sListSex);
 	    model.addAttribute("sListNacionalidad",sListNacionalidad);
 	    
-	    return "registrar";  
+	    return "update_registro";  
 	}
 	 
 }
