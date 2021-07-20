@@ -35,7 +35,7 @@ pageEncoding="ISO-8859-1"%>
       <div class="row">
            <div class="col-md-8">
       		<h4><span>Bienvenido ${cliente.apellido} ${cliente.nombre}</span></h4>
-      		${msg}
+      		
       		<c:forEach var="cuenta" items="${sListCuenta}">
 		
 				  <div class="card" style="margin-bottom: 31px;">

@@ -33,6 +33,11 @@ public class HistorialController {
 		 Cuenta sCuenta = cuentaService.findById(Long.parseLong(cuenta));
 		 model.addAttribute("movimiento", sList);
 		 model.addAttribute("cuenta", sCuenta);
+		 
+
+	     //agregado para mostrar el usuario logueado
+	     model.addAttribute("usrLogin", sCuenta.getCliente().getUsuario().getUserName());
+		 
 		 return "historial";		 
 	 }	
 

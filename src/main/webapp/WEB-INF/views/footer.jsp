@@ -80,7 +80,7 @@ ul, ol {
                
                
                </a>
-              
+               <p class="rights"><span>${usrLogin}</span></p>
                 <!-- Rights-->
                 <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>Waves</span><span>. </span><span>All Rights Reserved.</span></p>
               </div>

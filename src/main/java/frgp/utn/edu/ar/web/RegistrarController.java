@@ -82,7 +82,9 @@ public class RegistrarController {
 	//   model.addAttribute("cuenta", cliente.getCuenta().get(0));
 	//   model.addAttribute("usr", cliente.getUsuario());
 	//   model.addAttribute("localidad", cliente.getLocalidad());
-	   return "cliente_modificado_ok";
+	   
+	   //return "cliente_modificado_ok";
+       return "redirect:/administracion";
    }
 	
    @ModelAttribute

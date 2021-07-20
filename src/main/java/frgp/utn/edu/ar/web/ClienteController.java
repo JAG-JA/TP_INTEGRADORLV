@@ -44,7 +44,7 @@ public class ClienteController {
         //return "administracion";
 		clienteService.delete(sCliente);
 		
-        return "redirect:/administracion";  
+        return "redirect:/administracion";
 	}
 	
 	 @ModelAttribute

@@ -63,6 +63,9 @@ public class LoginController {
 	   
 	   model.addAttribute("sListCuenta", sListCuenta);
 	   
+	   //agregado para mostrar el usuario logueado
+	   model.addAttribute("usrLogin", usrValid.getUserName());
+	   
 	   return "cliente";
    }
  

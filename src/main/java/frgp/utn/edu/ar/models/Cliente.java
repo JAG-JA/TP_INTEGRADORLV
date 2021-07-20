@@ -1,5 +1,7 @@
 package frgp.utn.edu.ar.models;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -86,9 +88,20 @@ public class Cliente {
 	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}
+	
 	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
+	
+	/*
+	public String getFechaNacimiento() {
+		 
+        DateFormat dateFormat = new SimpleDateFormat("mm/dd/yyyy");  
+        String strDate = dateFormat.format(fechaNacimiento); 
+		
+		return strDate;
+	}*/
+	
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}

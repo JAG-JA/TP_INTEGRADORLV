@@ -37,6 +37,10 @@ public class TransferenciaController {
 		TransferenciaDto transferenciaDto  =  new TransferenciaDto();
 		transferenciaDto.setCuentaOrigen(sCuenta.getNroCuenta());
 		model.addAttribute("transferenciaDto",transferenciaDto);
+		
+	    //agregado para mostrar el usuario logueado
+	    model.addAttribute("usrLogin", sCuenta.getCliente().getUsuario().getUserName());
+		
 		return  "transferencia";
 		
 	}
