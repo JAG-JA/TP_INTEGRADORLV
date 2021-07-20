@@ -100,9 +100,13 @@ public class GenerarCliente {
 	
 	public static Cuenta getCuenta() {
 		Cuenta sCuenta = new Cuenta();
+		Double aleatorio;
+		
+		aleatorio = 10000 + Math.random() * 99999;
+		
 		sCuenta.setActivo(true);
-		sCuenta.setNroCuenta( "0" + (10000 + Math.random() * 99999));
-		sCuenta.setCbu( "00000000000000000" + (10000 + Math.random() * 99999));
+		sCuenta.setNroCuenta( "0" +  Math.round(aleatorio)); //(10000 + Math.random() * 99999));
+		sCuenta.setCbu( "00000000000000000" +  Math.round(aleatorio)); //(10000 + Math.random() * 99999));
 		sCuenta.setFechaCreacion(new Date());
 		sCuenta.setSaldo(1000.00);
 		return sCuenta;

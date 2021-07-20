@@ -80,7 +80,7 @@ public class ClienteController {
 	@RequestMapping("updateregistro/{id}")
 	public String updateregistro(@PathVariable String id, Model model ) {
 		 Cliente sCliente  = clienteService.findById(Long.parseLong(id));
-		 model.addAttribute("cliente",sCliente);
+		model.addAttribute("cliente",sCliente);
 		List<Localidad> sListLocalidad = localidadService.findAll();
 	    List<String> sListSex = new ArrayList<String>();
 	    sListSex.add("Masculino");
@@ -91,8 +91,7 @@ public class ClienteController {
 	    sListNacionalidad.add("Argentina");
 	    sListNacionalidad.add("Congoleña");
 	    sListNacionalidad.add("Paraguaya");
-	    
-	    
+	    	    
 	    model.addAttribute("sComboLocalidades",sListLocalidad);
 	    model.addAttribute("sListSex",sListSex);
 	    model.addAttribute("sListNacionalidad",sListNacionalidad);

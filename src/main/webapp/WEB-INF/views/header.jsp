@@ -30,11 +30,11 @@
                 </ul>
               
                 <div class="login">
-                	<a href="../login"  class="login-btn">
+                	<a href="<%=request.getContextPath()%>/login"  class="login-btn">
                			 <i class="fa fa-sign-in"></i>
                          <span class="d-none d-md-inline-block">Login</span>
                     </a>
-                	<a href="registrar" class="signup-btn"><i class="fa fa-user"></i>
+                	<a href="<%=request.getContextPath()%>/registrar" class="signup-btn"><i class="fa fa-user"></i>
                			 <span class="d-none d-md-inline-block">Registrar</span>
                	    </a>
                	 </div>
