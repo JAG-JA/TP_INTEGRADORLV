@@ -57,7 +57,10 @@ public class TransferenciaController {
 			 return "error_trans";
 		 }
 		 transferencia.save(transferenciaDto);
+		 
+		 model.addAttribute("idcuenta",sCuenta.getIdCuenta());
 		 return "successTrans";
+		 
 	}
 	
 	 @ModelAttribute

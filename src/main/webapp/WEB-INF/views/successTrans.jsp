@@ -152,10 +152,16 @@ section .section-title {
   </div>
    <section id="team" class="pb-5">
     <div class="container">
-        <h5 class="section-title h1">Transferencia Realizada</h5>
+        <h5 class="section-title h1">Transferencia Realizada. - - )</h5>
+        
         <div class="row">
-            <!-- Team member -->
-            
+           <div class="login">
+                	<a href="../transferencia/${idcuenta}"  class="login-btn">
+               			 <i class="fa fa-sign-in"></i>
+                         <span class="d-none d-md-inline-block">Realizar otra transferencia.</span>
+                    </a>
+                    
+               	 </div>
         
 
         </div>

@@ -45,9 +45,16 @@ public class ClienteDaoImpl  implements ClienteDao{
 
 	@Override
 	public Cliente save(Cliente object) {
-	   Session session = HibernateConf.getSessionFactory().openSession();
-	   session.save(object); 
-	   session.close();
+	   
+		
+		try {
+			   Session session = HibernateConf.getSessionFactory().openSession();
+			   session.save(object); 
+			   session.close();
+		} catch (Exception ex) {
+			System.out.print(ex.getMessage() + "Error al guardar los datos del cliente."); 
+			}
+
 	   return object;
 	}
 
