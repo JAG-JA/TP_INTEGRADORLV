@@ -15,7 +15,7 @@
 <!------ <link rel="stylesheet" type="text/css" href="css/style.css"/>---->
  <link rel="stylesheet" th:href="@{/css/style.css}">
 <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
-<title>Banco online</title>
+<title>Banco online: El Paceño. </title>
 
 <style type="text/css">
 
@@ -115,7 +115,7 @@
 				    <div class="row">
 				    		<div class="col-md-6">
 				    			<div class="form-group">
-						             <form:input path="dni" class="form-control"  placeholder="DNI"/>
+						             <form:input type="number" pattern="[0-9]{10}" maxlength = "8" minlength = "6" path="dni" class="form-control"  placeholder="DNI"/>
 						        </div>
 				    		</div>
 				    		<div class="col-md-6">
