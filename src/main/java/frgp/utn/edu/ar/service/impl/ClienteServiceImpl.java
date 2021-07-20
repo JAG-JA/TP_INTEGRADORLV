@@ -48,8 +48,7 @@ public class ClienteServiceImpl  implements ClienteService{
 	@Override
 	public Cliente save(Cliente object) {
 		Localidad loc = new Localidad();
-		
-		
+				
 		//loc = localidadDao.findByName(object.getLocalidad().getLocalidad());
 		
 		loc = localidadDao.findByName("Pacheco");
@@ -64,6 +63,9 @@ public class ClienteServiceImpl  implements ClienteService{
 		
 		return clienteDao.save(object);
 	}
+	
+	
+
 
 	@Override
 	public void delete(Cliente object) {

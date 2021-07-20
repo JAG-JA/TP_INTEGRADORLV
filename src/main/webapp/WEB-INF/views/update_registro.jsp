@@ -96,10 +96,9 @@
 		<div class="login-form">
 			    <div class="panel">
 				   <h2> Informacion del Usuario</h2>
-				   <p> Mi Perfil </p>
+				   <p> Mi Perfil - </p>
 			   </div>
 			    <form:form id="Registrar" action="save" modelAttribute="cliente">
-			    	
 			    	<div class="row">
 			    	    <div class="col-md-6">
 			    	    	  <div class="form-group">

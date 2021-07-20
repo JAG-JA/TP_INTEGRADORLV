@@ -152,6 +152,7 @@ public class TransferenciaServiceImpl implements TransferenciaService{
 	  // guardar el segundo movimiento
 
 	  System.out.println("idTransferencia:"+idTransferencia);
+	  System.out.println("Detalle :"+ dto.getDetalle());
 	  
 	   Movimiento sMOrigen = new Movimiento();
 	   sMOrigen.setFechaAlta(new Date());
