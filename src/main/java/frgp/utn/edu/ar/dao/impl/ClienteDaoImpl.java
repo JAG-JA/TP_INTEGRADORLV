@@ -93,18 +93,23 @@ public class ClienteDaoImpl  implements ClienteDao{
 	@Override
 	public void updateCliente(Cliente cliente) {
 		session.getTransaction().begin();
-		NativeQuery  query = session.createSQLQuery("update cliente set nacionalidad = :NAC, nombre = :NOMB, apellido = :APEL, sexo = :SEX  where idcliente = :ID"); //, localidad_c = :LOC
+		NativeQuery  query = session.createSQLQuery("update cliente set nacionalidad = :NAC, nombre = :NOMB, apellido = :APEL, sexo = :SEX, direccion = :DIRE, dni = :DNI, fechaNacimiento = :FECHA where idcliente = :ID"); //,localidad_c = :LOC  
 		query.addEntity(Cliente.class);
 		query.setParameter("ID", cliente.getIdCliente());
 		query.setParameter("NAC", cliente.getNacionalidad());
 		query.setParameter("NOMB", cliente.getNombre());
 		query.setParameter("APEL", cliente.getApellido());
 		query.setParameter("SEX", cliente.getSexo());
-		//query.setParameter("LOC", cliente.getLocalidad());
-		
+		query.setParameter("DNI", cliente.getDni());
+		query.setParameter("DIRE", cliente.getDireccion());
+		//query.setParameter("LOC", cliente.getLocalidad().getId());
+		query.setParameter("FECHA", cliente.getFechaNacimiento());
+				
 		int id = query.executeUpdate();
-		System.out.println("el idsssssssssssssssssssssss " + cliente.getIdCliente());
+		System.out.println("el id " + cliente.getIdCliente());
 		System.out.println("el nombre " + cliente.getNombre());
+		System.out.println("Fecha Nacimiento " + cliente.getFechaNacimiento());
+		//System.out.println("ID Localidad" + cliente.getLocalidad().getId());
 		session.getTransaction().commit();
 		
 	}

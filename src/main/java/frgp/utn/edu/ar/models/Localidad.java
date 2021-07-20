@@ -42,8 +42,13 @@ public class Localidad {
 		 this.activo = true;
 	}
 
+	public int getId() {
+		return id;
+	}
 
-
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public int getCp() {
 		return cp;

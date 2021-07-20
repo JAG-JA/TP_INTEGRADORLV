@@ -133,7 +133,7 @@
 			    		</div>
 			    		<div class="col-md-6">
 			    			<div class="form-group">
-			        		  <form:input path="fechaNacimiento" class="form-control"  placeholder="Fecha de nacimiento"/>
+			        		  <form:input path="fechaNacimiento" class="form-control" placeholder="MM/DD/YYYY"/>
 							</div>
 			    		</div>
 				    </div>  

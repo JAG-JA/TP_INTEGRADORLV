@@ -84,7 +84,7 @@
      	 <div class="col-md-6 mt-2" style="margin-top: 48px!important; margin-left: 114px;">
      	 	<span style="color: white; ">
      	 		¡No compartas tu información!<br>
-				El usuario sera asigando.
+				Actualizacion del Usuario.
      	 	</span>
      	 </div>
      	  <div class="col-md-2">
@@ -99,17 +99,9 @@
 				   <p> Mi Perfil - </p>
 			   </div>
 			    <form:form id="Update_registro" action="../updateCliente" modelAttribute="cliente">
+			       	       			 
 			    	<div class="row">
 			    	
-			    	
-			    	 <div class="col-md-6">
-			    	    	  <div class="form-group">
-			       	       			 <form:input path="idCliente" class="form-control"  placeholder="idCliente"/>
-				       		 </div>
-			    	    </div>
-			    	    
-			    	    
-			    	    
 			    	    <div class="col-md-6">
 			    	    	  <div class="form-group">
 			       	       			 <form:input path="nombre" class="form-control"  placeholder="Nombre"/>
@@ -142,7 +134,7 @@
 			    		</div>
 			    		<div class="col-md-6">
 			    			<div class="form-group">
-			        		  <form:input path="fechaNacimiento" class="form-control"  placeholder="Fecha de nacimiento"/>
+			        		  <form:input path="fechaNacimiento" class="form-control" placeholder="MM/DD/YYYY"/>
 							</div>
 			    		</div>
 				    </div>  
@@ -159,6 +151,15 @@
 				    		</div>				    								
 			    		</div>	
 				    </div>  	    
+				    
+			    	<div class="row">
+			    	 <div class="col-md-6">
+			    	    	  <div style="display:none" class="form-group">
+			       	       			 <form:input path="idCliente" class="form-control"  placeholder="Id"/>
+				       		 </div>
+			    	 </div>
+			    	</div>
+				    
 			            <button type="submit" class="btn btn-primary">Aceptar</button>
 			    </form:form>
 		   
