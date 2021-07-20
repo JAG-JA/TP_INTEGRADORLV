@@ -30,7 +30,7 @@
                 </ul>
               
                 <div class="login">
-                	<a href="login"  class="login-btn">
+                	<a href="../login"  class="login-btn">
                			 <i class="fa fa-sign-in"></i>
                          <span class="d-none d-md-inline-block">Login</span>
                     </a>
